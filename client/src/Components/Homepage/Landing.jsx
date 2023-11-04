@@ -32,7 +32,7 @@ const Landing = () => {
       <Box display="flex" width="100%" pl={20} mt={100}>
         <Box width="50%">
           <Heading
-            style={{ fontFamily: "Inter", fontSize: "100px" }}
+            style={{ fontFamily: "Inter", fontSize: "90px" }}
             as="h1"
             size="3xl"
             mt={20}
@@ -232,48 +232,136 @@ const Landing = () => {
 
       <Box className="main" pl={5}>
         <Box className="main1">
-          <Box w="600px">
-            <Heading>Industry Veteran </Heading>
+          <Box w="200px">
+            <Heading
+              style={{ fontFamily: "Inter", fontSize: "20px" }}
+              as="h1"
+              size="sm"
+            >
+              Industry Veteran{" "}
+            </Heading>
           </Box>
-          <Heading>Trust Us:</Heading>
+          <Heading
+            style={{ fontFamily: "Inter", fontSize: "20px" }}
+            as="h1"
+            size="sm"
+          >
+            Trust Us:
+          </Heading>
         </Box>
 
         <Box className="slider">
           <Box className="slide-track">
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={amazon} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={dell} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={ibm} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={infosys} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={maruti} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={tcs} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={amazon} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={dell} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={ibm} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="124px"
+              height="51px"
+              top="39px"
+              left="740px"
+
+
+            >
               <Image src={infosys} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="189px"
+              height="73px"
+              top="21px"
+              left="1069px"
+ 
+
+            >
               <Image src={maruti} alt="amazon" />
             </Box>
-            <Box className="slide">
+            <Box
+              className="slide"
+              width="958px"
+              height="868px"
+              top="96px"
+              left="689px"
+            >
               <Image src={tcs} alt="amazon" />
             </Box>
           </Box>
