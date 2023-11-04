@@ -15,37 +15,120 @@ import {
   Heading,
   Tab,
 } from "@chakra-ui/react";
-import time from "../../assest/icons-49.png";
-import icon from "../../assest/icons.png";
-import arrow from "../../assest/arrow.png";
-import icons from "../../assest/happy.png";
-
+import time from "../../assest/progress 1.png";
+import icon from "../../assest/right-arrow_2026976 1.png";
+import arrow from "../../assest/360-degree_5651685 1.png";
+import icons from "../../assest/Screenshot_2023-11-04_at_4.52 1.png";
+import "./autoplaycarousel.css";
+import amazon from "../../assest/amazon.jpg";
+import dell from "../../assest/dell.jpg";
+import ibm from "../../assest/ibm.jpg";
+import infosys from "../../assest/infosys.jpg";
+import maruti from "../../assest/maruti.jpg";
+import tcs from "../../assest/tcs.jpg";
 const Landing = () => {
   return (
     <>
-      <Box display="flex" width="100%"  pl={20} mt={100}  >
-        <Box width="50%"  >
-          <Heading as="h1" size="4xl" mb={"30px"} mt={20}>
-            <Box display="flex" justifyContent={"left"} gap={5} mb={"20px"}>
-              Build Your
-              <Image src={time} w="70px" h="70px" />
-            </Box>
-            <Box display="flex" justifyContent={"left"} gap={5} mb={"20px"}>
+      <Box display="flex" width="100%" pl={20} mt={100}>
+        <Box width="50%">
+          <Heading
+            style={{ fontFamily: "Inter", fontSize: "100px" }}
+            as="h1"
+            size="3xl"
+            mt={20}
+          >
+            <Box textAlign={"left"} display="flex">
+              <Box
+                w="470px"
+                height="121px"
+                font-family="Inter"
+                line-height="121px"
+                letter-spacing="0em"
+                text-align="left"
+                color="#000000"
+              >
+                Build Your
+              </Box>
+
               <Image
-                src="https://ouch-cdn2.icons8.com/EXFjjFdSq3yOB885yP5q0ywRU-9j-rPLu9qlP3E-T4Y/rs:fit:368:375/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMTAv/YzJiYjk2NzgtODdj/NS00MzRhLTllYzUt/ZTc0OTY3MGZlYWVi/LnBuZw.png"
-                w="70px"
-                h="70px"
+                src={time}
+                width="102px"
+                height="86px"
+                top="172px"
+                left="540px"
               />
-              <Image src={icon} w="70px" h="70px" />
-              Dream
             </Box>
-            <Box display="flex" justifyContent={"left"} gap={5} mb={"20px"}>
-              Career .<Image src={arrow} w="100px" h="100px" />
+            <Box mt="-10px" display="flex">
+              <Image
+                src={icon}
+                width="112px"
+                height="117px"
+                top="278px"
+                left="52px"
+                ml="10px"
+                mr="50px"
+              />{" "}
+              <Box
+                width="481px"
+                height="165px"
+                top="258px"
+                left="182px"
+                font-family="Inter"
+                font-size="120px"
+                font-weight="400"
+                line-height="145px"
+                letter-spacing="0em"
+                text-align="left"
+                box-shadow="0px 4px 4px 0px #00000040"
+                color="#000000"
+              >
+                Dream
+              </Box>
+            </Box>
+            <Box mt="-55px" textAlign={"left"} display="flex">
+              <Box
+                w="440px"
+                height="121px"
+                line-height="121px"
+                letter-spacing="0em"
+                text-align="left"
+                color="#000000"
+              >
+                CAREER
+              </Box>
+
+              <Image
+                src={arrow}
+                width="102px"
+                height="86px"
+                top="172px"
+                left="540px"
+              />
             </Box>
           </Heading>
-          <Text textAlign={"left"} mb={"30px"}>
-            SkillTank is a platform where talent meets opportunities to unlock
-            their potential.
+
+          <Text
+            textAlign={"left"}
+            style={{
+              fontFamily: "Inter",
+              fontWeight: "bold",
+              fontSize: "20px",
+            }}
+            text-align="left"
+            color="#000000"
+          >
+            SkillTank is a platform where talent meets
+          </Text>
+          <Text
+            color="#000000"
+            style={{
+              fontFamily: "Inter",
+              fontWeight: "bold",
+              fontSize: "20px",
+            }}
+            mb="100px"
+          >
+            opportunities to unlock their potential.
           </Text>
 
           <Box boxShadow="rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset">
@@ -69,7 +152,11 @@ const Landing = () => {
                         placeholder="Add your Expertise here..."
                         flex="1"
                       />
-                      <Button bg="rgb(255, 150, 53)" color="whiteAlpha.1000" _hover={{ bg: "rgb(70,69,69)", color: "white" }}>
+                      <Button
+                        bg="rgb(255, 150, 53)"
+                        color="whiteAlpha.1000"
+                        _hover={{ bg: "rgb(70,69,69)", color: "white" }}
+                      >
                         <AiOutlineSearch />
                         Search
                       </Button>
@@ -83,11 +170,12 @@ const Landing = () => {
 
                   <Box mb={"20px"}>
                     <Flex align="center" gap={"5px"}>
-                      <Input
-                        placeholder="Add Courses here..."
-                        flex="1"
-                      />
-                      <Button bg="rgb(255, 150, 53)" color="whiteAlpha.1000" _hover={{ bg: "rgb(70,69,69)", color: "white" }}>
+                      <Input placeholder="Add Courses here..." flex="1" />
+                      <Button
+                        bg="rgb(255, 150, 53)"
+                        color="whiteAlpha.1000"
+                        _hover={{ bg: "rgb(70,69,69)", color: "white" }}
+                      >
                         <AiOutlineSearch />
                         Search
                       </Button>
@@ -101,11 +189,12 @@ const Landing = () => {
 
                   <Box mb={"20px"}>
                     <Flex align="center" gap={"5px"}>
-                      <Input
-                        placeholder="Add Domain here..."
-                        flex="1"
-                      />
-                      <Button bg="rgb(255, 150, 53)" color="whiteAlpha.1000" _hover={{ bg: "rgb(70,69,69)", color: "white" }}>
+                      <Input placeholder="Add Domain here..." flex="1" />
+                      <Button
+                        bg="rgb(255, 150, 53)"
+                        color="whiteAlpha.1000"
+                        _hover={{ bg: "rgb(70,69,69)", color: "white" }}
+                      >
                         <AiOutlineSearch />
                         Search
                       </Button>
@@ -119,11 +208,12 @@ const Landing = () => {
 
                   <Box mb={"20px"}>
                     <Flex align="center" gap={"5px"}>
-                      <Input
-                        placeholder="Add Experience here..."
-                        flex="1"
-                      />
-                      <Button bg="rgb(255, 150, 53)" color="whiteAlpha.1000" _hover={{ bg: "rgb(70,69,69)", color: "white" }}>
+                      <Input placeholder="Add Experience here..." flex="1" />
+                      <Button
+                        bg="rgb(255, 150, 53)"
+                        color="whiteAlpha.1000"
+                        _hover={{ bg: "rgb(70,69,69)", color: "white" }}
+                      >
                         <AiOutlineSearch />
                         Search
                       </Button>
@@ -135,17 +225,58 @@ const Landing = () => {
           </Box>
         </Box>
 
-        <Box width="50%" >
-          {/* <Box width="100%" border="2px solid red" > */}
-            <Image
-              src={icons}
-              borderRadius={10}
-              h="full"
-              width="500px"
-              ml={20}
-              mt={5}
-            />
-          {/* </Box> */}
+        <Box width="700px" height="800px" top="101px" left="740px">
+          <Image src={icons} borderRadius={10} width="100%" />
+        </Box>
+      </Box>
+
+      <Box className="main" pl={5}>
+        <Box className="main1">
+          <Box w="600px">
+            <Heading>Industry Veteran </Heading>
+          </Box>
+          <Heading>Trust Us:</Heading>
+        </Box>
+
+        <Box className="slider">
+          <Box className="slide-track">
+            <Box className="slide">
+              <Image src={amazon} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={dell} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={ibm} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={infosys} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={maruti} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={tcs} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={amazon} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={dell} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={ibm} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={infosys} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={maruti} alt="amazon" />
+            </Box>
+            <Box className="slide">
+              <Image src={tcs} alt="amazon" />
+            </Box>
+          </Box>
         </Box>
       </Box>
     </>

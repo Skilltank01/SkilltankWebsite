@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Tabs,
@@ -14,6 +15,7 @@ import {
   Heading,
   Text,
   Select,
+  Flex,
 } from "@chakra-ui/react";
 import { GoogleLogin } from "@react-oauth/google";
 
@@ -60,12 +62,14 @@ const Signup = () => {
                   <VStack spacing={4}>
                     <FormControl>
                       <GoogleLogin
+                        buttontext={"Signup with Google"}
                         onSuccess={(credentialResponse) => {
                           console.log(credentialResponse);
                         }}
                         onError={() => {
                           console.log("Login Failed");
                         }}
+                        style={{ backgroundColor: "blue", color: "white" }}
                       />
                     </FormControl>
 
@@ -139,16 +143,23 @@ const Signup = () => {
                         onChange={handleChange}
                       />
                     </FormControl>
+                    <Flex gap="2" w="100%">
+                      <Text>By signing up, you agree to our </Text>
+                      <Text color="orange">
+                        <Link to="/terms">Terms and Conditions.</Link>
+                      </Text>
+                    </Flex>
 
                     <Button type="submit" colorScheme="orange" w="full">
                       Sign Up
                     </Button>
-                    <Text color="orange">
-                      Already have an account?{" "}
-                      <a href="login">
-                        Login Now (Student / Employer / Professional / Mentor)
-                      </a>
-                    </Text>
+                    <Flex gap="2" w="fit-content" m="auto" >
+                      <Text>Already have an account?</Text>
+                      <Text color="orange">
+                        <Link to="/login">Login Now</Link>
+                      </Text>
+                    </Flex>
+                   
                   </VStack>
                 </form>
               </Box>
@@ -218,7 +229,6 @@ const Signup = () => {
                         value={formData.mobile}
                         onChange={handleChange}
                       />
-                      {/* Add verification logic if needed */}
                     </FormControl>
                     <FormControl isRequired>
                       <FormLabel htmlFor="jobTitle">Job Title</FormLabel>
@@ -231,15 +241,22 @@ const Signup = () => {
                       />
                     </FormControl>
 
+                    <Flex gap="2" w="100%">
+                      <Text>By signing up, you agree to our </Text>
+                      <Text color="orange">
+                        <Link to="/terms">Terms and Conditions.</Link>
+                      </Text>
+                    </Flex>
+
                     <Button type="submit" colorScheme="orange" w="full">
                       Sign Up
                     </Button>
-                    <Text color="orange">
-                      Already have an account?{" "}
-                      <a href="login">
-                        Login Now (Student / Employer / Professional / Mentor)
-                      </a>
-                    </Text>
+                    <Flex gap="2" w="fit-content" m="auto" >
+                      <Text>Already have an account?</Text>
+                      <Text color="orange">
+                        <Link to="/login">Login Now</Link>
+                      </Text>
+                    </Flex>
                   </VStack>
                 </form>
               </Box>
@@ -321,15 +338,22 @@ const Signup = () => {
                       />
                     </FormControl>
 
+                    <Flex gap="2" w="100%">
+                      <Text>By signing up, you agree to our </Text>
+                      <Text color="orange">
+                        <Link to="/terms">Terms and Conditions.</Link>
+                      </Text>
+                    </Flex>
+
                     <Button type="submit" colorScheme="orange" w="full">
                       Sign Up
                     </Button>
-                    <Text color="orange">
-                      Already have an account?{" "}
-                      <a href="login">
-                        Login Now (Student / Employer / Professional / Mentor)
-                      </a>
-                    </Text>
+                    <Flex gap="2" w="fit-content" m="auto" >
+                      <Text>Already have an account?</Text>
+                      <Text color="orange">
+                        <Link to="/login">Login Now</Link>
+                      </Text>
+                    </Flex>
                   </VStack>
                 </form>
               </Box>
@@ -441,7 +465,9 @@ const Signup = () => {
                         name="domainOfInterest"
                         value={formData.domainOfInterest}
                         onChange={handleChange}
-                      >
+                      ><option value="">
+                          select domainOfInterest
+                        </option>
                         <option value="Accounting & Taxation">
                           Accounting & Taxation
                         </option>
@@ -492,15 +518,22 @@ const Signup = () => {
                       </Select>
                     </FormControl>
 
+                    <Flex gap="2" w="100%">
+                      <Text>By signing up, you agree to our </Text>
+                      <Text color="orange">
+                        <Link to="/terms">Terms and Conditions.</Link>
+                      </Text>
+                    </Flex>
+
                     <Button type="submit" colorScheme="orange" w="full">
                       Sign Up
                     </Button>
-                    <Text color="orange">
-                      Already have an account?{" "}
-                      <a href="login">
-                        Login Now (Student / Employer / Professional / Mentor)
-                      </a>
-                    </Text>
+                    <Flex gap="2" w="fit-content" m="auto" >
+                      <Text>Already have an account?</Text>
+                      <Text color="orange">
+                        <Link to="/login">Login Now</Link>
+                      </Text>
+                    </Flex>
                   </VStack>
                 </form>
               </Box>

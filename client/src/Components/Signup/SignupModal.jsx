@@ -5,8 +5,19 @@ import Signup from "./Signup";
 
 const SignupModal = ({ isOpen, onClose }) => {
   const [scrollBehavior, setScrollBehavior] = React.useState('inside')
+
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose} scrollBehavior={scrollBehavior} size="xl">
+    <Modal isOpen={isOpen} onClose={onClose} scrollBehavior={scrollBehavior} size="xl"
+  
+      overflow="hidden"
+      sx={{
+        "&::-webkit-scrollbar": {
+          display: "none"
+        }
+      }}
+   
+    >
       <ModalOverlay />
       <ModalContent>
         <ModalCloseButton />

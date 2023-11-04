@@ -2,20 +2,16 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Landing from "../Components/Homepage/Landing";
-// import StudentSignup from "../Components/Signup/StudentSignup";
-// import MentorSignup from './../Components/Signup/MentorSignup';
-// import EmployerSignup from './../Components/Signup/EmployerSignup';
-// import ProfessionalSingup from './../Components/Signup/ProfessionalSingup';
+import Login from "../Components/Login/Login";
+import Signup from "../Components/Signup/Signup";
 
 const MainRoutes = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<Landing />} />
-        {/* <Route path="/signup/student" element={<StudentSignup />} />
-        <Route path="/signup/professional" element={<ProfessionalSingup />}/>
-        <Route path="/signup/employer" element={<EmployerSignup />}/>
-        <Route path="/signup/mentor" element={<MentorSignup />}/> */}
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );

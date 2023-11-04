@@ -1,0 +1,49 @@
+.slider {
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+   
+    padding: 20px;
+}
+.main{
+    display: flex;
+    line-height: 20px;
+ 
+}
+.main1{
+    margin-top:50px ;
+    justify-content: center;
+    width: 830px;
+    height: 160px;
+   padding:50px , 50px;
+    overflow: hidden;
+    
+}
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+    justify-content: center; /* Aligning slides horizontally in the center */
+  
+}
+
+.slide{
+    padding: 60px;
+    width: 180px;
+    
+}
+
+.slider:hover .slide-track {
+    animation-play-state: paused; /* Pauses the animation on slider hover */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 5));
+    }
+}
