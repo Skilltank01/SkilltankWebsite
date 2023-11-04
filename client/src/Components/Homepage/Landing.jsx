@@ -18,7 +18,7 @@ import {
 import time from "../../assest/progress 1.png";
 import icon from "../../assest/right-arrow_2026976 1.png";
 import arrow from "../../assest/360-degree_5651685 1.png";
-import icons from "../../assest/Screenshot_2023-11-04_at_4.52 1.png";
+import icons from "../../assest/digital.png";
 import "./autoplaycarousel.css";
 import amazon from "../../assest/amazon.jpg";
 import dell from "../../assest/dell.jpg";

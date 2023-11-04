@@ -97,7 +97,7 @@ const Navbar = () => {
           <Flex w="55%" p="1" h="full" justifyContent="space-between">
             <Box>
               <Link to="/Learn">
-                <Flex flexDirection="column" align="center" color="blue">
+                <Flex flexDirection="column" align="center" color="#001440">
                   <FaBookReader />
                   <ChakraLink style={{ textDecoration: "none" }} mr={4}>
                     Learn
@@ -109,7 +109,7 @@ const Navbar = () => {
             <Box>
               {" "}
               <Link to="/Mentor">
-                <Flex flexDirection="column" align="center" color="blue">
+                <Flex flexDirection="column" align="center" color="#001440">
                   <HiOutlineLightBulb />
                   <ChakraLink style={{ textDecoration: "none" }} mr={4}>
                     Mentor
@@ -119,7 +119,7 @@ const Navbar = () => {
             </Box>
             <Box>
               <Link to="/Compete">
-                <Flex flexDirection="column" align="center" color="blue">
+                <Flex flexDirection="column" align="center" color="#001440">
                   <BsBarChartLineFill />
                   <ChakraLink style={{ textDecoration: "none" }} mr={4}>
                     Compete
@@ -129,7 +129,7 @@ const Navbar = () => {
             </Box>
             <Box>
               <Link to="/Jobs">
-                <Flex flexDirection="column" align="center" color="blue">
+                <Flex flexDirection="column" align="center" color="#001440">
                   <MdWork />
                   <ChakraLink style={{ textDecoration: "none" }} mr={4}>
                     Jobs
@@ -141,7 +141,7 @@ const Navbar = () => {
             <Menu>
               <MenuButton
                 as={Button}
-                bg="blue"
+                bg="#001440"
                 size="md"
                 color="white"
                 borderRadius={30}
@@ -164,7 +164,7 @@ const Navbar = () => {
             <Menu>
               <MenuButton
                 as={Button}
-                bg="#00A5EC"
+                bg="#008AD8"
                 size="md"
                 borderRadius={30}
                 color="white"
