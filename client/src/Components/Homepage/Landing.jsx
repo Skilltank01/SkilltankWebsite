@@ -36,6 +36,15 @@ import compete from "../../assest/2.png";
 import mentor from "../../assest/3.png";
 import section1 from "../../assest/Rectangle1.png";
 import section2 from "../../assest/Rectangle2.png";
+import sec1 from "../../assest/Rectangle 8.png";
+import sec2 from "../../assest/Rectangle 12.png";
+import sec3 from "../../assest/Rectangle 13.png";
+import sec4 from "../../assest/Rectangle 14.png";
+import sec5 from "../../assest/Rectangle 18.png";
+import sec6 from "../../assest/Rectangle 19.png";
+import sec7 from "../../assest/Rectangle 20.png";
+import sec8 from "../../assest/Rectangle 21.png";
+import section5 from "../../assest/2534028-removebg-preview.png";
 
 const Landing = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -54,10 +63,7 @@ const Landing = () => {
 
   const slides = [
     {
-      imgs: [
-      section1,   
-      section2
-      ],
+      imgs: [section1, section2],
     },
     {
       imgs: [
@@ -338,7 +344,7 @@ const Landing = () => {
         <Heading fontFamily="sans-serif">Industry Veteran Trust Us </Heading>
       </Box>
 
-      <Box w="100%"  align="right" mt={10}>
+      <Box w="100%" align="right" mt={10}>
         <Box
           h="auto"
           overflow="hidden"
@@ -358,7 +364,7 @@ const Landing = () => {
             }`}
           >
             <Box className="slideimage">
-              <Image  src={amazon} />
+              <Image src={amazon} />
             </Box>
 
             <Box className="slideimage">
@@ -437,22 +443,20 @@ const Landing = () => {
       <Flex w="90%" m="auto" overflow="hidden" mt="100px">
         <Flex
           pos="relative"
-         
           w="full"
           {...carouselStyle}
           onMouseEnter={pauseSlide}
           onMouseLeave={resumeSlide}
         >
           {slides.map((slide, sid) => (
-            <Box key={`slide-${sid}`} flex="none" boxSize="full" >
+            <Box key={`slide-${sid}`} flex="none" boxSize="full">
               <Flex>
                 {slide.imgs.map((image, imgIndex) => (
                   <Box
                     justifyContent="space-between"
                     key={`image-${imgIndex}`}
                     w="50%"
-                  
-                  p="3"
+                    p="3"
                   >
                     <Image
                       src={image}
@@ -472,7 +476,6 @@ const Landing = () => {
       <Flex gap="10" mt="20px" justify="center" pos="absolute" w="full">
         {Array.from({ length: slidesCount }).map((_, slide) => (
           <Box
-            border="2px solid "
             width="15px"
             height="15px"
             key={`dots-${slide}`}
@@ -507,7 +510,6 @@ const Landing = () => {
         align-items="center"
         mt="30px"
         height="328px"
-        
         background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
 linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         border="1px solid #FFFFFF1A"
@@ -523,10 +525,98 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         </Box>
       </Box>
 
-      <Box w="100%">
-        <Box w="50%">
-        <Heading>Find The Best Guidance</Heading>
-        <Heading>To Grow Your Career</Heading></Box>
+      <Flex w="100%" mt="30px">
+        <Box w="50%" p="20">
+          <Box width="683px" height="73px" text-align="left" color="#000000">
+            {" "}
+            <Heading
+              style={{
+                fontFamily: "Inter",
+                fontSize: "60px",
+                fontWeight: "500",
+                lineHeight: "73px",
+                letterSpacing: "0em",
+                top: "454px",
+                left: "107px",
+              }}
+            >
+              Find The Best Guidance
+            </Heading>
+          </Box>
+
+          <Box
+            width="495px"
+            mb="30px"
+            height="61px"
+            text-align="left"
+            color="#000000"
+          >
+            <Heading
+              style={{
+                fontFamily: "Inter",
+                fontSize: "50px",
+                fontWeight: "500",
+                lineHeight: "61px",
+                letterSpacing: "0em",
+                top: "527px",
+                left: "107px",
+              }}
+            >
+              To Grow Your Career
+            </Heading>
+          </Box>
+
+          <Box width="667px" height="60px" text-align="left" color="#000000">
+            <Text
+              style={{
+                fontFamily: "Inter",
+                fontSize: "25px",
+                fontWeight: "400",
+                lineHeight: "30px",
+                letterSpacing: "0em",
+                top: "628px",
+                left: "107px",
+              }}
+            >
+              Grow your skills with proper guidance step by step from Industrial
+              Experts as per your domain and expertise
+            </Text>
+          </Box>
+
+          <Box
+            width="552px"
+            height="80px"
+            top="2270px"
+            left="-608px"
+            background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
+linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
+            border="1px solid #FFFFFF1A"
+            mt="50px"
+          >
+            <Button
+              width="210px"
+              height="52px"
+              top="14px"
+              left="15px"
+              background="#1D1E20"
+              color="#FFFFFF"
+              boxShadow="0px 4px 4px 0px #00000040"
+            >
+              Get The Mentor
+            </Button>
+            <Button
+              width="210px"
+              height="52px"
+              top="14px"
+              left="100px"
+              background="#F8A80D"
+              color="#000000"
+            >
+              Get The Skills
+            </Button>
+          </Box>
+        </Box>
+
         <Box
           align="right"
           w="50%"
@@ -537,9 +627,129 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         >
           <Image src={section4} alt="section4" />
         </Box>
+      </Flex>
+
+      <Box w="100%" textAlign="center" mt={20}>
+        <Heading fontFamily="sans-serif">Explore Opportunities</Heading>
+      </Box>
+      <Box
+        w="80%"
+        display="flex"
+        justifyContent="space-around"
+        m="auto"
+        pt={20}
+        align-items="center"
+        mt="30px"
+        height="328px"
+        background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
+linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
+        border="1px solid #FFFFFF1A"
+      >
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
+          <Image src={sec1} alt="learn" />
+        </Box>
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
+          <Image src={sec2} alt="compete" />
+        </Box>
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
+          <Image src={sec3} alt="mentor" />
+        </Box>
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
+          <Image src={sec4} alt="mentor" />
+        </Box>
       </Box>
 
-      
+      <Box w="100%" textAlign="center" mt={20}>
+        <Heading fontFamily="sans-serif">How To Get Registered </Heading>
+        <Text>Apply For Job Ready Programs In 4 simple steps</Text>
+      </Box>
+      <Box w="100%">
+      <Box w="50%">
+      <Image src={section5} alt="mentor" />
+        </Box>
+        <Box w="50%">
+        
+        </Box>
+      </Box>
+
+      <Box>
+        <Button>Apply Now</Button>
+      </Box>
+
+      <Box w="100%" textAlign="center" mt={20}>
+        <Heading fontFamily="sans-serif">Get Your Dream Opportunity </Heading>
+      </Box>
+      <Box
+        w="80%"
+        display="flex"
+        justifyContent="space-around"
+        m="auto"
+        pt={20}
+        align-items="center"
+        mt="30px"
+        height="328px"
+        background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
+linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
+        border="1px solid #FFFFFF1A"
+      >
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
+          <Image src={sec5} alt="learn" />
+        </Box>
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
+          <Image src={sec6} alt="compete" />
+        </Box>
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
+          <Image src={sec7} alt="mentor" />
+        </Box>
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
+          <Image src={sec8} alt="mentor" />
+        </Box>
+      </Box>
+
+      {/* <Flex
+        w="full"
+       
+       p="10"
+       border="2px solid black"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Flex w="full" overflow="hidden">
+          <Flex pos="relative" h="400px" w="full" {...carouselStyle} onMouseEnter={pauseSlide} onMouseLeave={resumeSlide}>
+            {slides1.map((slide, sid) => (
+              <Box key={slide-${sid}} flex="none" boxSize="full" shadow="md">
+                <Flex>
+                  {slide.imgs.map((image, imgIndex) => (
+                   <Box justifyContent="space-between" key={`image-${imgIndex}`} h="100%" w="50%" m="auto" >
+                   <Image src={image} alt={carousel image ${imgIndex}} boxSize="full" backgroundSize="cover" h="350px" />
+                 </Box>
+                  ))}
+                </Flex>
+              </Box>
+            ))}
+          </Flex>
+          <HStack justify="center" pos="absolute" bottom="8px" w="full" pr="10">
+            {Array.from({ length: slides1Count1 }).map((_, slide) => (
+              <Box
+                width="15px"
+                height="15px"
+                key={dots-${slide}}
+                cursor="pointer"
+                boxSize={["7px", null, "15px"]}
+                m="0 2px"
+                bg={currentSlide1 === slide ? "#1D4A8E" : "#1D4A8E"}
+                rounded="50%"
+                display="inline-block"
+                transition="background-color 0.6s ease"
+                _hover={{ bg: "blackAlpha.800" }}
+                onClick={() => setSlide(slide)}
+              ></Box>
+            ))}
+          </HStack>
+        </Flex>
+      </Flex> */}
+
+      {/* <Footer></Footer> */}
     </>
   );
 };
