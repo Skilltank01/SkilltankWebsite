@@ -53,12 +53,12 @@ const Landing = () => {
   });
 
   const slides = [
-    // {
-    //   imgs: [
-    //   {section1},   
-    //   {section2}
-    //   ],
-    // },
+    {
+      imgs: [
+      section1,   
+      section2
+      ],
+    },
     {
       imgs: [
         "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
@@ -338,7 +338,7 @@ const Landing = () => {
         <Heading fontFamily="sans-serif">Industry Veteran Trust Us </Heading>
       </Box>
 
-      <Box w="100%" align="right" mt={10}>
+      <Box w="100%"  align="right" mt={10}>
         <Box
           h="auto"
           overflow="hidden"
@@ -358,7 +358,7 @@ const Landing = () => {
             }`}
           >
             <Box className="slideimage">
-              <Image w="100%" src={amazon} />
+              <Image  src={amazon} />
             </Box>
 
             <Box className="slideimage">
@@ -434,33 +434,32 @@ const Landing = () => {
         </Box>
       </Box>
 
-      <Flex mt="100px" w="full" overflow="hidden">
+      <Flex w="90%" m="auto" overflow="hidden" mt="100px">
         <Flex
           pos="relative"
-          h="200px"
+         
           w="full"
           {...carouselStyle}
           onMouseEnter={pauseSlide}
           onMouseLeave={resumeSlide}
         >
           {slides.map((slide, sid) => (
-            <Box key={`slide-${sid}`} flex="none" boxSize="full" shadow="md">
+            <Box key={`slide-${sid}`} flex="none" boxSize="full" >
               <Flex>
                 {slide.imgs.map((image, imgIndex) => (
                   <Box
                     justifyContent="space-between"
                     key={`image-${imgIndex}`}
                     w="50%"
-                    p="10px"
-                    pl="10"
-                    pr="10"
+                  
+                  p="3"
                   >
                     <Image
                       src={image}
                       alt={`carousel image ${imgIndex}`}
                       boxSize="full"
                       backgroundSize="cover"
-                      h="150px"
+                      h="200px"
                     />
                   </Box>
                 ))}
@@ -470,7 +469,7 @@ const Landing = () => {
         </Flex>
       </Flex>
 
-      <Flex gap="5" justify="center" pos="absolute" w="full">
+      <Flex gap="10" mt="20px" justify="center" pos="absolute" w="full">
         {Array.from({ length: slidesCount }).map((_, slide) => (
           <Box
             border="2px solid "
@@ -500,32 +499,34 @@ const Landing = () => {
       </Box>
 
       <Box
-        w="100%"
+        w="80%"
         display="flex"
         justifyContent="space-around"
+        m="auto"
         pt={20}
         align-items="center"
         mt="30px"
         height="328px"
-        top="1498px"
-        left="-720px"
+        
         background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
 linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         border="1px solid #FFFFFF1A"
       >
-        <Box width="419px" height="173px" top="36px" left="85px">
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
           <Image src={learn} alt="learn" />
         </Box>
-        <Box width="419px" height="173px" top="36px" left="85px">
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
           <Image src={compete} alt="compete" />
         </Box>
-        <Box width="419px" height="173px" top="36px" left="85px">
+        <Box width="419px" height="173px" top="36px" p="5" left="85px">
           <Image src={mentor} alt="mentor" />
         </Box>
       </Box>
 
       <Box w="100%">
-        <Box w="50%"></Box>
+        <Box w="50%">
+        <Heading>Find The Best Guidance</Heading>
+        <Heading>To Grow Your Career</Heading></Box>
         <Box
           align="right"
           w="50%"
@@ -534,9 +535,11 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
           top="378px"
           left="-774px"
         >
-          <Image src={section4} alt="amazon" />
+          <Image src={section4} alt="section4" />
         </Box>
       </Box>
+
+      
     </>
   );
 };
