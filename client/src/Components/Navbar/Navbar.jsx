@@ -67,7 +67,7 @@ const Navbar = () => {
         pl={{ base: "5", md: "10" }}
         pr={{ base: "5", md: "10" }}
       >
-        <Box cursor="pointer" align="center" w="15%" top="45px">
+        <Box cursor="pointer" pl="7" align="center" w="9%" top="45px">
           <Link to="/">
             <Image src={logo} alt="My Logo" />
           </Link>

@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState} from "react";
 // import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import {
@@ -14,6 +14,7 @@ import {
   Button,
   Heading,
   Tab,
+  keyframes,
 } from "@chakra-ui/react";
 import time from "../../assest/progress 1.png";
 import icon from "../../assest/right-arrow_2026976 1.png";
@@ -27,6 +28,20 @@ import infosys from "../../assest/infosys.jpg";
 import maruti from "../../assest/maruti.jpg";
 import tcs from "../../assest/tcs.jpg";
 const Landing = () => {
+
+  const [isPaused, setIsPaused] = useState(false);
+  const handleHover = () => {
+    setIsPaused(!isPaused);
+  };
+
+  const scroll = keyframes({
+    "0%": {
+      transform: "translateX(0)",
+    },
+    "100%": {
+      transform: "translateX(calc(-250px * 9))",
+    },
+  });
   return (
     <>
       <Box display="flex" width="100%" pl={20} mt={100}>
@@ -230,143 +245,105 @@ const Landing = () => {
         </Box>
       </Box>
 
-      <Box className="main" pl={5}>
-        <Box className="main1">
-          <Box w="200px">
-            <Heading
-              style={{ fontFamily: "Inter", fontSize: "20px" }}
-              as="h1"
-              size="sm"
-            >
-              Industry Veteran{" "}
-            </Heading>
-          </Box>
-          <Heading
-            style={{ fontFamily: "Inter", fontSize: "20px" }}
-            as="h1"
-            size="sm"
-          >
-            Trust Us:
-          </Heading>
-        </Box>
-
-        <Box className="slider">
-          <Box className="slide-track">
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={amazon} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={dell} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={ibm} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={infosys} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={maruti} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={tcs} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={amazon} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={dell} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={ibm} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="124px"
-              height="51px"
-              top="39px"
-              left="740px"
-
-
-            >
-              <Image src={infosys} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="189px"
-              height="73px"
-              top="21px"
-              left="1069px"
- 
-
-            >
-              <Image src={maruti} alt="amazon" />
-            </Box>
-            <Box
-              className="slide"
-              width="958px"
-              height="868px"
-              top="96px"
-              left="689px"
-            >
-              <Image src={tcs} alt="amazon" />
-            </Box>
-          </Box>
-        </Box>
+      <Box w="100%" textAlign="center" mt={20}>
+        <Heading fontFamily="sans-serif">Industry Veteran Trust Us </Heading>
       </Box>
+
+      <Box w="100%"  align="right" mt={10}>
+        <Box
+          h="auto"
+          overflow="hidden"
+          position="relative"
+          w="100%"
+          display="grid"
+          placeItems="center"
+          overflowWrap="hidden"
+          onMouseEnter={handleHover}
+          onMouseLeave={handleHover}
+        >
+          <Box
+           display="flex"
+           w={`calc(250px * 18)`}
+           animation={`${scroll} 20s linear ${isPaused ? "paused" : "infinite"}`}
+          >
+            <Box className="slideimage">
+              <Image w="100%" src={amazon} />
+            </Box>
+
+            <Box className="slideimage">
+              <Image src={dell} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={ibm} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={infosys} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={maruti} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={tcs} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={amazon} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={dell} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={ibm} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={infosys} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={maruti} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={tcs} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={amazon} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={dell} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={ibm} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={infosys} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={maruti} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={tcs} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={amazon} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={dell} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={ibm} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={infosys} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={maruti} alt="amazon" />
+            </Box>
+            <Box className="slideimage">
+              <Image src={tcs} alt="amazon" />
+            </Box>
+          </Box>
+        </Box>
+        </Box>
+    
+  
     </>
   );
 };
