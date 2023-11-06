@@ -16,6 +16,7 @@ import {
   Tab,
   keyframes,
   HStack,
+  Grid,
 } from "@chakra-ui/react";
 import time from "../../assest/progress 1.png";
 import icon from "../../assest/right-arrow_2026976 1.png";
@@ -29,6 +30,13 @@ import infosys from "../../assest/infosys.jpg";
 import maruti from "../../assest/maruti.jpg";
 import tcs from "../../assest/tcs.jpg";
 import section3 from "../../assest/Screenshot_2023-11-04_at_12.41 1.png";
+import section4 from "../../assest/Rectangle7.png";
+import learn from "../../assest/1.png";
+import compete from "../../assest/2.png";
+import mentor from "../../assest/3.png";
+import section1 from "../../assest/Rectangle1.png";
+import section2 from "../../assest/Rectangle2.png";
+
 const Landing = () => {
   const [isPaused, setIsPaused] = useState(false);
   const handleHover = () => {
@@ -44,53 +52,45 @@ const Landing = () => {
     },
   });
 
-  const arrowStyles = {
-    width: "15px",
-    height: "15px",
-    top: "217px",
-    left: "489px",
-    cursor: "pointer",
-    pos: "absolute",
-    top: "50%",
-    mt: "-22px",
-    p: "16px",
-    color: "blue",
-    fontWeight: "bold",
-    fontSize: "18px",
-    transition: "0.6s ease",
-    borderRadius: "0 3px 3px 0",
-    userSelect: "none",
-    _hover: {
-      opacity: 0.8,
-      bg: "black",
-    },
-  };
   const slides = [
+    // {
+    //   imgs: [
+    //   {section1},   
+    //   {section2}
+    //   ],
+    // },
     {
-      img: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      imgs: [
+        "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+        "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      ],
     },
     {
-      img: "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      imgs: [
+        "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      ],
     },
     {
-      img: "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      imgs: [
+        "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      ],
     },
     {
-      img: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      imgs: [
+        "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      ],
     },
     {
-      img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      imgs: [
+        "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      ],
     },
   ];
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidesCount = slides.length;
 
@@ -108,16 +108,28 @@ const Landing = () => {
 
   const carouselStyle = {
     transition: "all .5s",
-    ml: `-${currentSlide * 100}%`, // Adjust the percentage for two images at a time
+    ml: `-${currentSlide * 100}%`,
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 3000); // Adjust the interval time (in milliseconds) as needed
+    const handleSlider = () => {
+      if (!isPaused) {
+        nextSlide();
+      }
+    };
 
-    return () => clearInterval(interval);
-  }, [currentSlide]);
+    const automatedSlide = setInterval(handleSlider, 3000);
+
+    return () => clearInterval(automatedSlide);
+  }, [isPaused, currentSlide]);
+
+  const pauseSlide = () => {
+    setIsPaused(true);
+  };
+
+  const resumeSlide = () => {
+    setIsPaused(false);
+  };
 
   return (
     <>
@@ -422,115 +434,109 @@ const Landing = () => {
         </Box>
       </Box>
 
-      <Flex
-        background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
-linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
-        _dark={{
-          bg: "#3e3e3e",
-        }}
-        p={10}
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Flex mt="100px" w="full" overflow="hidden">
         <Flex
-          overflow="hidden"
           pos="relative"
-          width="1440px"
-          height="308px"
-          background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
-linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
-          border="1px solid  #FFFFFF1A"
+          h="200px"
+          w="full"
+          {...carouselStyle}
+          onMouseEnter={pauseSlide}
+          onMouseLeave={resumeSlide}
         >
-          <Flex
-            h="200px"
-            w="100%"
-            gap={10}
-            // border="2px solid red"
-            {...carouselStyle}
-          >
-            {slides.map((slide, sid) => (
-              <>
-                <Box
-                  key={`slide-${sid}`}
-                  boxSize="full"
-                  shadow="md"
-                  flex="none"
-                  w="50%"
-                  height="auto"
-                  // border="2px solid black"
-                >
-                  {" "}
-                  <Text
-                    color="white"
-                    fontSize="xs"
-                    p="8px 12px"
-                    pos="absolute"
-                    top="0"
+          {slides.map((slide, sid) => (
+            <Box key={`slide-${sid}`} flex="none" boxSize="full" shadow="md">
+              <Flex>
+                {slide.imgs.map((image, imgIndex) => (
+                  <Box
+                    justifyContent="space-between"
+                    key={`image-${imgIndex}`}
+                    w="50%"
+                    p="10px"
+                    pl="10"
+                    pr="10"
                   >
-                    {sid + 1} / {slidesCount}
-                  </Text>
-                  <Image
-                    src={slide.img}
-                    alt="carousel image"
-                    boxSize="full"
-                    backgroundSize="cover"
-                    _hover={{transform: "translateZ(20px)"}} 
-                  />
-                </Box>
-              </>
-            ))}
-          </Flex>
-          {/* <Text {...arrowStyles} left="0"    onClick={prevSlide}>
-            &#10094;
-          </Text>
-          <Text {...arrowStyles} right="0" onClick={nextSlide}>
-            &#10095;
-          </Text> */}
-          <HStack justify="center" pos="absolute" bottom="8px" w="full">
-            {Array.from({
-              length: slidesCount,
-            }).map((_, slide) => (
-              <Box
-            
-                width="15px"
-                height="15px"
-                top="217px"
-                left="489px"
-                key={`dots-${slide}`}
-                cursor="pointer"
-                boxSize={["7px", null, "15px"]}
-                m="0 2px"
-                bg={currentSlide === slide ? "#1D4A8E" : "#1D4A8E"}
-                rounded="50%"
-                display="inline-block"
-                transition="background-color 0.6s ease"
-                _hover={{
-                  bg: "blackAlpha.800",
-                }}
-                onClick={() => setSlide(slide)}
-              ></Box>
-            ))}
-          </HStack>
+                    <Image
+                      src={image}
+                      alt={`carousel image ${imgIndex}`}
+                      boxSize="full"
+                      backgroundSize="cover"
+                      h="150px"
+                    />
+                  </Box>
+                ))}
+              </Flex>
+            </Box>
+          ))}
         </Flex>
       </Flex>
-<Box w="100%">
-<Box  
- width= "593px"
-height= "611px"
-top= "397px"
-left= "-56px"
->
-<Image 
-  src={section3} alt="amazon"
-/>
-</Box>
-<Box
-w="50%"
-></Box>
-</Box>
 
+      <Flex gap="5" justify="center" pos="absolute" w="full">
+        {Array.from({ length: slidesCount }).map((_, slide) => (
+          <Box
+            border="2px solid "
+            width="15px"
+            height="15px"
+            key={`dots-${slide}`}
+            cursor="pointer"
+            boxSize={["7px", null, "15px"]}
+            m="0 2px"
+            bg={currentSlide === slide ? "#1D4A8E" : "#1D4A8E"}
+            rounded="50%"
+            display="inline-block"
+            transition="background-color 0.6s ease"
+            _hover={{ bg: "blackAlpha.800" }}
+            onClick={() => setSlide(slide)}
+          ></Box>
+        ))}
+      </Flex>
 
+      <Box w="100%" mt="100px" display="flex">
+        <Box width="593px" height="611px" top="397px" left="-56px">
+          <Image src={section3} alt="section3" />
+        </Box>
+        <Box w="70%" textAlign="center">
+          <Text></Text>
+        </Box>
+      </Box>
 
+      <Box
+        w="100%"
+        display="flex"
+        justifyContent="space-around"
+        pt={20}
+        align-items="center"
+        mt="30px"
+        height="328px"
+        top="1498px"
+        left="-720px"
+        background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
+linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
+        border="1px solid #FFFFFF1A"
+      >
+        <Box width="419px" height="173px" top="36px" left="85px">
+          <Image src={learn} alt="learn" />
+        </Box>
+        <Box width="419px" height="173px" top="36px" left="85px">
+          <Image src={compete} alt="compete" />
+        </Box>
+        <Box width="419px" height="173px" top="36px" left="85px">
+          <Image src={mentor} alt="mentor" />
+        </Box>
+      </Box>
+
+      <Box w="100%">
+        <Box w="50%"></Box>
+        <Box
+          align="right"
+          w="50%"
+          width="692px"
+          height="608px"
+          top="378px"
+          left="-774px"
+        >
+          <Image src={section4} alt="amazon" />
+        </Box>
+      </Box>
     </>
   );
 };
