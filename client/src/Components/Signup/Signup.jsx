@@ -250,7 +250,9 @@ const Signup = () => {
                         name="position"
                         value={formData.position}
                         onChange={handleChange}
-                      >
+                      ><option value="">
+                          Select Position From Here
+                        </option>
                         <option value="Marketing Specialist">
                           Marketing Specialist
                         </option>
@@ -585,7 +587,9 @@ const Signup = () => {
                         name="position"
                         value={formData.position}
                         onChange={handleChange}
-                      >
+                      ><option value="">
+                          Select Position From Here
+                        </option>
                         <option value="Marketing Specialist">
                           Marketing Specialist
                         </option>
@@ -922,7 +926,9 @@ const Signup = () => {
                         name="position"
                         value={formData.position}
                         onChange={handleChange}
-                      >
+                      ><option value="">
+                          Select Position From Here
+                        </option>
                         <option value="Marketing Specialist">
                           Marketing Specialist
                         </option>
@@ -1175,7 +1181,7 @@ const Signup = () => {
                         value={formData.domainOfInterest}
                         onChange={handleChange}
                       >
-                        <option value="">select domainOfInterest</option>
+                        <option value="">Select Domain Of Interest</option>
                         <option value="Accounting & Taxation">
                           Accounting & Taxation
                         </option>
