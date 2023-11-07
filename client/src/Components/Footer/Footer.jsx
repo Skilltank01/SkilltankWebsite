@@ -37,8 +37,8 @@ const Footer = () => {
             </Text>
           </Box>
         </Box>
-   
-        <Box align="center" >
+
+        <Box align="center">
           <Text
             style={{
               whiteSpace: "nowrap",
@@ -48,28 +48,53 @@ const Footer = () => {
               lineHeight: "normal",
               fontStyle: "normal",
               letterSpacing: "0",
-              gap:"5px"
+              marginBottom: "10px", // Add margin-bottom to create space below the heading
             }}
           >
             Stay Connected
           </Text>
-          <Text>Email: admit@skilltank.tech</Text>
-          <Text>Phone: +91-7726066716</Text>
+          <Text style={{ marginBottom: "8px", fontFamily: "Inter-bold", }}>
+            Email: admit@skilltank.tech
+          </Text>
+          <Text style={{ marginBottom: "8px" }}>Phone: +91-7726066716</Text>
         </Box>
 
-        <Box fontWeight="bold">
-          <Box>
-            <Text>Stay Updated</Text>
-            <Text>
-              We'll send you updates on the latest opportunities to showcase
-              your talent and get hired
-            </Text>{" "}
-            <Box mt={4}>
-              <Text>Sign Up For Our Newsletter</Text>
-              <Link color="teal.300" href="#">
-                Subscribe
-              </Link>
-            </Box>
+        <Box align="center">
+          <Text
+            style={{
+              whiteSpace: "nowrap",
+              fontWeight: "700",
+              fontFamily: "Inter-bold",
+              fontSize: "35px",
+              lineHeight: "normal",
+              fontStyle: "normal",
+              letterSpacing: "0",
+              marginBottom: "10px",
+            }}
+          >
+            Stay Updated
+          </Text>
+          <Text
+            style={{
+              //   whiteSpace: "nowrap",
+
+              fontWeight: "300",
+              fontFamily: "Inter",
+           
+              lineHeight: "normal",
+              fontStyle: "normal",
+              letterSpacing: "0",
+              marginBottom: "10px",
+            }}
+          >
+            We'll send you updates on the latest opportunities to
+            <Text ml="-120px">showcase your talent and get hired</Text>
+          </Text>{" "}
+          <Box mt={4}>
+            <Text>Sign Up For Our Newsletter</Text>
+            <Link color="teal.300" href="#">
+              Subscribe
+            </Link>
           </Box>
         </Box>
       </Box>
