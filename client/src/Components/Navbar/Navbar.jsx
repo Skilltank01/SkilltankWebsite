@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Flex
+      <Flex 
         as="nav"
         align="center"
         justify="space-between"
