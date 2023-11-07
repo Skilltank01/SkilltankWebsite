@@ -32,7 +32,7 @@ const Footer = () => {
             height="30px"
             width="341px"
             color="#0e0d0d"
-            font-family="Helvetica"
+            font-family="Inter"
             font-size="25px"
             font-weight="700"
             left="0"

@@ -55,10 +55,6 @@ import sec7 from "../../assest/Rectangle 20.png";
 import sec8 from "../../assest/Rectangle 21.png";
 import section5 from "../../assest/Untitled_design__1_-removebg-preview.png";
 import section6 from "../../assest/Rectangle 22.png";
-import logo from "../../assest/skill.png";
-// import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-// import { FiTwitter } from "react-icons/fi";
-// import { GrInstagram } from "react-icons/gr";
 
 const Landing = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -213,23 +209,27 @@ const Landing = () => {
 
   const steps = [
     {
-      title: "9 hours",
+      title: "Step 1 : Submit Your Application",
       description:
-        "Specifies the offset length of the shadow. This parameter accepts two, three, or four values. Third and fourth values are optional. They are interpreted as follows Specifies the offset length of the shadow.",
+        "Tell us about yourself and what drives you to join this course.",
     },
     {
-      title: "12 hours",
+      title: "Step 2 : Clear A Short Screening Test",
       description:
-        "Specifies the offset length of the shadow. This parameter accepts two, three, or four values. Third and fourth values are optional. They are interpreted as follows Specifies the offset length of the shadow.",
+        "Clear the JET (Job Eligibility Test) to schedule 1:1 Career Mentorship session  with our Career Experts.",
     },
     {
-      title: "18 hours",
+      title: "Step 3 : Block your seat",
+      description: "vPay admission fee to move forward.",
+    },
+    {
+      title: "Step 4 : Course Commencements",
       description:
-        "Specifies the offset length of the shadow. This parameter accepts two, three, or four values. Third and fourth values are optional. They are interpreted as follows Specifies the offset length of the shadow.",
+        "We run cohort based batches for each program hence kindly check the Job Ready section for the commencement dates.",
     },
   ];
   const { activeStep } = useSteps({
-    index: 1,
+    index: 0,
     count: steps.length,
   });
 
@@ -875,42 +875,53 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
           <Image src={section5} alt="mentor" />
         </Box>
 
-        <Box w="50%" border="2px solid red">
-          {/* <Box  borderRadius={"10px"} p="18px"> */}
-          <Stepper
-            index={activeStep}
-            orientation="vertical"
-            w="100%"
-            height="auto"
-            gap="0"
-          >
-            {steps.map((step, index) => (
-              <Step key={index}>
-                <StepIndicator>
-                  <StepStatus
-                    complete={<StepIcon />}
-                    incomplete={<StepNumber />}
-                    active={<StepNumber />}
-                  />
-                </StepIndicator>
+        <Box w="50%"  ml="200px" h="600px">
+          <Box borderRadius={"10px"} p="18px">
+            <Stepper
+              index={activeStep}
+              orientation="vertical"
+              w="100%"
+              height="auto"
+              gap="10"
+              color="black"
+              fontSize="15"
+              fontFamily="Inter"
+              fontWeight="700"
+              wordWrap="break-word"
+            >
+              {steps.map((step, index) => (
+                <Step key={index}>
+                  <StepIndicator color="#FDB529" bg="#FDB529">
+                    <StepStatus
+                      complete
+                      incomplete={<StepNumber />}
+                      active={<StepNumber />}
+                    />
+                  </StepIndicator>
 
-                <Box mt="30px" textAlign="left" w="100%">
-                  <Text color="gray" fontSize="xs" mt="1px">
-                    {step.title}
-                  </Text>
-                  <StepDescription>{step.description}</StepDescription>
-                </Box>
+                  <Box mt="30px" textAlign="left" w="100%">
+                    <Text
+                      mt="1px"
+                      color="black"
+                      fontSize="32"
+                      fontFamily="Inter"
+                      fontWeight="700"
+                      wordWrap="break-word"
+                    >
+                      {step.title}
+                    </Text>
+                    <StepDescription>{step.description}</StepDescription>
+                  </Box>
 
-                <StepSeparator />
-              </Step>
-            ))}
-          </Stepper>
+                  <StepSeparator />
+                </Step>
+              ))}
+            </Stepper>
+          </Box>
         </Box>
-
-        {/* </Box> */}
       </Flex>
 
-      <Box align="center" box-shadow="0px 4px 4px 0px #00000040">
+      <Box align="center"mt="30px" box-shadow="0px 4px 4px 0px #00000040">
         <Button
           bg="#EA9E58"
           p={5}
@@ -1037,6 +1048,6 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         ))}
       </Flex>
     </>
-  )
-}
+  );
+};
 export default Landing;
