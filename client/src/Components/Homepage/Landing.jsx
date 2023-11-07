@@ -1016,7 +1016,7 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
               </Flex>
             </Box>
           ))}
-        </Flex>{" "}
+        </Flex>
       </Flex>
       <Flex gap="10" mt="20px" justify="center" pos="absolute" w="full">
         {Array.from({ length: slides1Count1 }).map((_, slide) => (
@@ -1037,6 +1037,6 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         ))}
       </Flex>
     </>
-  );
-};
+  )
+}
 export default Landing;
