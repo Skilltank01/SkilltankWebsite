@@ -70,9 +70,9 @@ const Login = () => {
                         }}
                       />
                     </FormControl>
-
+                    <Text>------------------------ or ------------------------</Text>
                     <FormControl isRequired>
-                      <FormLabel htmlFor="email">Email</FormLabel>
+                      <FormLabel htmlFor="email">Email Id</FormLabel>
                       <Input
                         type="email"
                         id="email"
@@ -125,9 +125,9 @@ const Login = () => {
                         }}
                       />
                     </FormControl>
-
+                    <Text>------------------------ or ------------------------</Text>
                     <FormControl isRequired>
-                      <FormLabel htmlFor="email">Email Id </FormLabel>
+                      <FormLabel htmlFor="email">Official Email Id </FormLabel>
                       <Input
                         type="email"
                         id="email"
@@ -179,7 +179,7 @@ const Login = () => {
                         }}
                       />
                     </FormControl>
-
+                    <Text>------------------------ or ------------------------</Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="email">Official Email Id</FormLabel>
                       <Input
@@ -234,7 +234,7 @@ const Login = () => {
                         }}
                       />
                     </FormControl>
-
+                    <Text>------------------------ or ------------------------</Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="officialEmail">
                         Official Email Id
