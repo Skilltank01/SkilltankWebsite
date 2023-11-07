@@ -76,15 +76,14 @@ graph TD;
     App-->HomePage
     HomePage-->SignUpPage;
      HomePage-->LoginPage;
-      SignUpPage-->loginPage;
 SignUpPage-->StudentSingupPage;
  SignUpPage-->ProfessionalSingupPage;
  SignUpPage-->EmployerSingupPage;
  SignUpPage-->MentorSingupPage;
-  loginPage-->StudentloginPage;
- loginPage-->ProfessionalloginPage;
- loginPage-->EmployerloginPage;
- loginPage-->MentorloginPage;
+ StudentSingupPage-->StudentloginPage;
+ ProfessionalSingupPage-->ProfessionalloginPage;
+ EmployerSingupPage-->EmployerloginPage;
+ MentorSingupPage-->MentorloginPage;
         
 ```
 
