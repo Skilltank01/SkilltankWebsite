@@ -875,7 +875,7 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
           <Image src={section5} alt="mentor" />
         </Box>
 
-        <Box w="50%"  ml="200px" h="600px">
+        <Box w="50%"  ml="100px" h="600px">
           <Box borderRadius={"10px"} p="18px">
             <Stepper
               index={activeStep}
@@ -910,7 +910,7 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
                     >
                       {step.title}
                     </Text>
-                    <StepDescription>{step.description}</StepDescription>
+                    <StepDescription  wordWrap="break-word">{step.description}</StepDescription>
                   </Box>
 
                   <StepSeparator />
