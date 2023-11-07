@@ -84,7 +84,10 @@ SignUpPage-->StudentSingupPage;
  ProfessionalSingupPage-->ProfessionalloginPage;
  EmployerSingupPage-->EmployerloginPage;
  MentorSingupPage-->MentorloginPage;
-        
+LoginPage--> Learnpage
+LoginPage--> Mentorpage
+LoginPage--> Competepage
+LoginPage--> Jobspage
 ```
 
 ---
