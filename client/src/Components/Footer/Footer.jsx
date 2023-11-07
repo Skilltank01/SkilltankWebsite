@@ -14,19 +14,19 @@ import logo9 from "../../assest/mail 1.png";
 
 const Footer = () => {
   return (
-    <Flex mt="100px" w="100%" mb="0px" h="600px">
+    <Flex mt="100px" w="100%" mb="0px" h="700px">
       <Box background="linear-gradient(0deg, #ECD3AC, #ECD3AC)" w="40%">
         <Box
           cursor="pointer"
           w="200px"
           h="150px"
-          ml="150px"
+          ml="130px"
           mt="50px"
           align="center"
           object-fit="cover"
         >
           <Link to="/">
-            <Image src={logo} alt="My Logo"  w="80%"/>
+            <Image src={logo} alt="My Logo" w="80%" />
           </Link>
           <Box
             height="30px"
@@ -47,9 +47,9 @@ const Footer = () => {
             </Text>
           </Box>
         </Box>
-        <Image src={logo1} alt =""/>
+        <Image src={logo1} alt="" mt="10px"/>
 
-        <Box align="left" mt="30px" ml="150px"  color="#0e0d0d">
+        <Box align="left" mt="30px" ml="150px" color="#0e0d0d">
           <Text
             style={{
               whiteSpace: "nowrap",
@@ -59,26 +59,52 @@ const Footer = () => {
               lineHeight: "normal",
               fontStyle: "normal",
               letterSpacing: "0",
-              marginBottom: "10px",
+              marginBottom: "20px",
             }}
           >
             Stay Connected
           </Text>
-          <Text
-            style={{
-              fontWeight: "bold",
-              marginBottom: "8px",
-              fontFamily: "Inter-bold",
-            }}
-          >
-            Email: admit@skilltank.tech
-          </Text>
-          <Text style={{ fontWeight: "bold", marginBottom: "8px" }}>
-            Phone: +91-7726066716
-          </Text>
+          <Flex gap="3">
+            {" "}
+            <Image src={logo9} alt="" h="20px" w="20px" />{" "}
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginBottom: "8px",
+                fontFamily: "Inter-bold",
+                fontSize: "20px",
+              }}
+            >
+              admit@skilltank.tech
+            </Text>
+          </Flex>
+          <Flex gap="3">
+            {" "}
+            <Image src={logo8} alt="" h="20px" w="20px" />{" "}
+            <Text
+              style={{
+                fontWeight: "bold",
+                marginBottom: "8px",
+                fontFamily: "Inter-bold",
+                fontSize: "20px",
+              }}
+            >
+              {" "}
+              +91-7726066716
+            </Text>
+          </Flex>
+
+          <Flex gap="5" ml="20px" mt="20px">
+            {" "}
+            <Image src={logo6} alt="" h="20px" w="20px" />
+            <Image src={logo5} alt="" h="20px" w="20px" />
+            <Image src={logo4} alt="" h="20px" w="20px" />{" "}
+            <Image src={logo3} alt="" h="20px" w="20px" />
+            <Image src={logo7} alt="" h="20px" w="20px" />
+          </Flex>
         </Box>
-        <Image src={logo1} alt =""/>
-        <Box align="left" mt="30px" ml="150px"  color="#0e0d0d">
+        <Image src={logo1} alt="" mt="20px"/>
+        <Box align="left" mt="30px" ml="150px" color="#0e0d0d">
           <Text
             style={{
               whiteSpace: "nowrap",
@@ -101,12 +127,12 @@ const Footer = () => {
               fontStyle: "normal",
               letterSpacing: "0",
               marginBottom: "10px",
-              wordWrap: 'break-word',
-              mt:"30px"
+              wordWrap: "break-word",
+              mt: "30px",
             }}
           >
             We'll send you updates on the latest opportunities to
-            <Text >showcase your talent and get hired</Text>
+            <Text>showcase your talent and get hired</Text>
           </Text>
           <Flex
             width="300px"
@@ -117,7 +143,6 @@ const Footer = () => {
             background="#D9D9D9"
             color="#0e0d0d"
             mt="40px"
-          
           >
             <Text
               style={{
@@ -128,13 +153,13 @@ const Footer = () => {
                 fontWeight: "400",
                 lineHeight: "normal",
                 marginRight: "20px",
-                align:"center",
+                marginLeft: "20px",
+                align: "center",
                 marginTop: "5px",
-                flexShrink: 0, 
-                overflow: "hidden", 
-                textOverflow: "ellipsis", 
-                whiteSpace: "nowrap", 
-              
+                flexShrink: 0,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
               }}
             >
               Sign Up For Our Newsletter
