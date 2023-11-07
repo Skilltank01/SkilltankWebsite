@@ -1,5 +1,12 @@
 > 💻 PROJECT NAME ✨ => 💻 SkilltankWebsite
+<br>
 
+
+
+
+[![Backend Deploy to Vercel](https://img.shields.io/badge/Backend_Deployed_Vercel_Link-0A66C2?style=for-the-badge&logo=ko-fi&logoColor=white)](
+)
+[![Deployed App Vercel Link](https://img.shields.io/badge/Deployed_App_Vercel_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://skilltank-website.vercel.app/)
 
 
 
@@ -70,8 +77,15 @@ graph TD;
     HomePage-->SignUpPage;
      HomePage-->LoginPage;
       SignUpPage-->loginPage;
-       
-     
+SignUpPage-->StudentSingupPage;
+ SignUpPage-->ProfessionalSingupPage;
+ SignUpPage-->EmployerSingupPage;
+ SignUpPage-->MentorSingupPage;
+  loginPage-->StudentloginPage;
+ loginPage-->ProfessionalloginPage;
+ loginPage-->EmployerloginPage;
+ loginPage-->MentorloginPage;
+        
 ```
 
 ---
