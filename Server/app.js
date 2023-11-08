@@ -32,7 +32,7 @@ app.use("/api/v1/", user);
 export default app;
 app.get("/", (req, res) =>
   res.send(
-    `<h1>Site is Working. click <a href=${process.env.FRONTEND_URL}>here</a> to visit frontend.</h1>`
+    `<h1>Skilltank backend site is Working. click <a href=${process.env.FRONTEND_URL}>here</a> to visit skilltank frontend site.</h1>`
   )
 );
 app.use(ErrorMiddleware);

@@ -2,11 +2,15 @@ import mongoose from "mongoose";
 import validator from "validator";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import crypto from "crypto";
+
 const schema = new mongoose.Schema({
-  name: {
+  firstName: {
     type: "string",
-    required: [true, "Please enter Your Name"],
+    required: [true, "Please enter Your First Name"],
+  },
+  lastName: {
+    type: "string",
+    required: [true, "Please enter Your  last Name"],
   },
   email: {
     type: "string",
@@ -20,63 +24,59 @@ const schema = new mongoose.Schema({
     minLength: [6, "Password must be at least 6 characters"],
     select: false,
   },
-//   role: {
-//     type: "string",
-//     enum: ["admin", "user"],
-//     default: "user",
-//   },
-//   subscription: {
-//     id: String,
-//     status: String,
-//   },
-//   avatar: {
-//     public_id: { type: String, required: true },
-//     url: {
-//       type: String,
-//       required: true,
-//     },
-//   },
-//   playlist:[
-//     {
-//         course:{
-//             type: mongoose.Schema.Types.ObjectId,
-//             ref:"Course",
-//         },
-//         poster:String,
-//     }
-//   ],
-//   createdAt: {
-//     type:Date,
-//     default:Date.now,
-//   },
-  resetPasswordToken :String,
-  resetPasswordExpire:String,
+  mobile: {
+    type: "string",
+    required: [true, "Please enter Your MobileNo."],
+    minLength: [10, "MobileNo must be at least 10 characters"],
+    select: false,
+  },
+  collegeName: {
+    type: "string",
+    required: [true, "Please enter Your  collegeName"],
+  },
+  city: {
+    type: "string",
+    required: [true, "Please enter Your  city"],
+  },
+  companyName: {
+    type: "string",
+    required: [true, "Please enter Your  companyName"],
+  },
+  position: {
+    type: "string",
+    required: [true, "Please Select Your  position"],
+  },
+  experience: {
+    type: "string",
+    required: [true, "Please Enter Your  experience"],
+  },
+  domainOfInterest: {
+    type: "string",
+    required: [true, "Please Select Your  domain"],
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  resetPasswordToken: String,
+  resetPasswordExpire: String,
 });
 
-schema.pre("save" , async function(next){
-  if(!this.isModified("password")) return next()
- const hashedPassword =  await bcrypt.hash(this.password , 10)
- this.password = hashedPassword
- next()
-})
+schema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+  const hashedPassword = await bcrypt.hash(this.password, 10);
+  this.password = hashedPassword;
+  next();
+});
 
-schema.methods.getJWTToken = function (){
-  return jwt.sign({_id:this._id},process.env.JWT_SECRET,{
-    expiresIn:"15d",
-  })
-}
-schema.methods.comparePassword = async function (password){
-  console.log(this.password)
-  return await bcrypt.compare(password , this.password)
-}
-
-schema.methods.getResetToken =   async function (){
- const resetToken  =  crypto.randomBytes(20).toString("hex")
-
- this.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex")
-this.resetPasswordExpire = Date.now() + 15 * 60 *1000
-
- return resetToken
-}
+schema.methods.getJWTToken = function () {
+  return jwt.sign({ _id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: "15d",
+  });
+};
+schema.methods.comparePassword = async function (password) {
+  console.log(this.password);
+  return await bcrypt.compare(password, this.password);
+};
 
 export const User = mongoose.model("User", schema);
