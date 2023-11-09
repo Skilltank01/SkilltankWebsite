@@ -46,14 +46,7 @@ const schema = new mongoose.Schema({
     type: "string",
     required: [true, "Please Select Your  position"],
   },
-  experience: {
-    type: "string",
-    required: [true, "Please Enter Your  experience"],
-  },
-  domainOfInterest: {
-    type: "string",
-    required: [true, "Please Select Your  domain"],
-  },
+ 
   createdAt: {
     type: Date,
     default: Date.now,
@@ -79,4 +72,4 @@ schema.methods.comparePassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-export const User = mongoose.model("User", schema);
+export const EmployerUser = mongoose.model("EmployerUser", schema);
