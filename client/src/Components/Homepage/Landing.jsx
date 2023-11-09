@@ -68,8 +68,8 @@ const Landing = () => {
     },
     "100%": {
       transform: "translateX(calc(-250px * 9))",
-    },
-  });
+    }
+  })
 
   const slides = [
     {
@@ -103,36 +103,36 @@ const Landing = () => {
       imgs: [
         "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      ],
-    },
-  ];
+      ]
+    }
+  ]
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidesCount = slides.length;
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
-  };
+  }
 
   const nextSlide = () => {
     setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
-  };
+  }
 
   const setSlide = (slide) => {
     setCurrentSlide(slide);
-  };
+  }
 
   const carouselStyle = {
     transition: "all .5s",
     ml: `-${currentSlide * 100}%`,
-  };
+  }
 
   useEffect(() => {
     const handleSlider = () => {
       if (!isPaused) {
         nextSlide();
       }
-    };
+    }
 
     const automatedSlide = setInterval(handleSlider, 3000);
 
@@ -141,11 +141,11 @@ const Landing = () => {
 
   const pauseSlide = () => {
     setIsPaused(true);
-  };
+  }
 
   const resumeSlide = () => {
     setIsPaused(false);
-  };
+  }
 
   //single slider
 
@@ -161,38 +161,38 @@ const Landing = () => {
     {
       imgs: [
         "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      ],
-    },
-  ];
+      ]
+    }
+  ]
 
   const [currentSlide1, setcurrentSlide1] = useState(0);
   const slides1Count1 = slides1.length;
 
   const prevSlide1 = () => {
     setcurrentSlide1((s) => (s === 0 ? slides1Count1 - 1 : s - 1));
-  };
+  }
 
   const nextSlide1 = () => {
     setcurrentSlide1((s) => (s === slides1Count1 - 1 ? 0 : s + 1));
-  };
+  }
 
   const setSlide1 = (slide) => {
     setcurrentSlide1(slide);
-  };
+  }
 
   const [isPaused1, setIsPaused1] = useState(false);
 
   const carouselStyle1 = {
     transition: "all .5s",
     ml: `-${currentSlide1 * 100}%`,
-  };
+  }
 
   useEffect(() => {
     const handleSlider = () => {
       if (!isPaused1) {
         nextSlide1();
       }
-    };
+    }
 
     const automatedSlide1 = setInterval(handleSlider, 3000);
 
@@ -201,11 +201,11 @@ const Landing = () => {
 
   const pauseSlide1 = () => {
     setIsPaused1(true);
-  };
+  }
 
   const resumeSlide1 = () => {
     setIsPaused1(false);
-  };
+  }
 
   const steps = [
     {
@@ -226,12 +226,12 @@ const Landing = () => {
       title: "Step 4 : Course Commencements",
       description:
         "We run cohort based batches for each program hence kindly check the Job Ready section for the commencement dates.",
-    },
-  ];
+    }
+  ]
   const { activeStep } = useSteps({
     index: 0,
     count: steps.length,
-  });
+  })
 
   return (
     <>
@@ -280,7 +280,7 @@ const Landing = () => {
                 mr="16px"
                 mb="52px"
                 background="cover no-repeat"
-              />{" "}
+              />
               <Box
                 width="481px"
                 height="165px"
@@ -1048,6 +1048,6 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         ))}
       </Flex>
     </>
-  );
-};
-export default Landing;
+  )
+}
+export default Landing

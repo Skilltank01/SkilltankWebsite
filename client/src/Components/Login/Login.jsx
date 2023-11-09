@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+
 import {
   Box,
   Tabs,
@@ -18,6 +21,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { GoogleLogin } from "@react-oauth/google";
+import { login } from "../../Redux/actions.js/user";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -31,11 +35,12 @@ const Login = () => {
       [name]: value,
     }));
   };
-
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    dispatch(login(formData));
     console.log("Form submitted:", formData);
+    
   };
   return (
     <>
@@ -70,7 +75,9 @@ const Login = () => {
                         }}
                       />
                     </FormControl>
-                    <Text>------------------------ or ------------------------</Text>
+                    <Text>
+                      ------------------------ or ------------------------
+                    </Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="email">Email Id</FormLabel>
                       <Input
@@ -125,7 +132,9 @@ const Login = () => {
                         }}
                       />
                     </FormControl>
-                    <Text>------------------------ or ------------------------</Text>
+                    <Text>
+                      ------------------------ or ------------------------
+                    </Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="email">Official Email Id </FormLabel>
                       <Input
@@ -179,7 +188,9 @@ const Login = () => {
                         }}
                       />
                     </FormControl>
-                    <Text>------------------------ or ------------------------</Text>
+                    <Text>
+                      ------------------------ or ------------------------
+                    </Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="email">Official Email Id</FormLabel>
                       <Input
@@ -234,7 +245,9 @@ const Login = () => {
                         }}
                       />
                     </FormControl>
-                    <Text>------------------------ or ------------------------</Text>
+                    <Text>
+                      ------------------------ or ------------------------
+                    </Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="officialEmail">
                         Official Email Id

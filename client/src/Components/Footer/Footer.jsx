@@ -173,7 +173,7 @@ const Footer = () => {
         <Box></Box>
       </Box>
     </Flex>
-  );
-};
+  )
+}
 
 export default Footer;

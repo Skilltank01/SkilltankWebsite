@@ -1,7 +1,7 @@
-import "./App.css";
-import Navbar from "./Components/Navbar/Navbar";
-import MainRoutes from "./Routes/MainRoutes";
-import Footer from "./Components/Footer/Footer";
+import "./App.css"
+import Navbar from "./Components/Navbar/Navbar"
+import MainRoutes from "./Routes/MainRoutes"
+import Footer from "./Components/Footer/Footer"
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <MainRoutes />
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

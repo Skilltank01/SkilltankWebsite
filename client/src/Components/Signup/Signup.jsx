@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// import  register  from '../../Redux/actions/user'
+import { useDispatch } from 'react-redux'
 import {
   Box,
   Tabs,
@@ -18,26 +20,69 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { GoogleLogin } from "@react-oauth/google";
+import { register } from "../../Redux/actions.js/user";
 
 const Signup = () => {
+
+  // const [firstName, setFirstName] = useState('');
+  // const [lastName, setLastName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [mobile, setMobile] = useState('');
+  // const [collegeName, setCollegeName] = useState('');
+  // const [city, setCity] = useState('');
+  // const [companyName, setCompanyName] = useState('');
+  // const [position, setPosition] = useState('');
+  // const [experience, setExperience] = useState('');
+  // const [domainOfInterest, setDomainOfInterest] = useState('');
+
+
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    mobile: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    mobile: '',
+    companyName: '',
+    position: '',
+    experience:"",
+    domainOfInterest:'',
+    collegeName:"",
+    city:'',
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Form submitted:", formData);
+    // const formData = new FormData();
+
+    // formData.append('firstName', firstName);
+    // formData.append('lastName', lastName);
+    // formData.append('email', email);
+    // formData.append('password', password);
+    // formData.append('mobile', mobile);
+    // formData.append('collegeName', collegeName);
+    // formData.append('city', city);
+    // formData.append('companyName', companyName);
+    // formData.append('position', position);
+    // formData.append('experience', experience);
+    // formData.append('domainOfInterest', domainOfInterest);
+
+    console.log('Form submitted:', formData);
+
+    dispatch(register(formData));
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   return (
     <>
       <Box>
@@ -1256,7 +1301,7 @@ const Signup = () => {
         </Tabs>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup
