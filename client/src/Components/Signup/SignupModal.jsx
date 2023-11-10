@@ -1,22 +1,27 @@
 import React from "react";
-import {  Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton } from "@chakra-ui/react";
-import Signup from "./Signup"; 
-
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+import Signup from "./Signup";
 
 const SignupModal = ({ isOpen, onClose }) => {
-  const [scrollBehavior, setScrollBehavior] = React.useState('inside')
-
+  const [scrollBehavior, setScrollBehavior] = React.useState("outside");
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} scrollBehavior={scrollBehavior} size="xl"
-  
-      overflow="hidden"
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      scrollBehavior={scrollBehavior}
+      size="xl"
       sx={{
         "&::-webkit-scrollbar": {
-          display: "none"
-        }
+          display: "none",
+        },
       }}
-   
     >
       <ModalOverlay />
       <ModalContent>

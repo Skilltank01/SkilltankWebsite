@@ -31,13 +31,38 @@ import {
 const Signup = () => {
   const dispatch = useDispatch();
 
+  const [semail, setsEmail] = useState("");
+  const [spassword, setsPassword] = useState("");
+  const [sfirstName, setsfirstName] = useState("");
+  const [slastName, setslastName] = useState("");
+  const [smobile, setsmobile] = useState("");
+  const [scollegeName, setscollegeName] = useState("");
+  const [scity, setscity] = useState("");
+
+  const [pemail, setpEmail] = useState("");
+  const [ppassword, setpPassword] = useState("");
+  const [pfirstName, setpfirstName] = useState("");
+  const [plastName, setplastName] = useState("");
+  const [pmobile, setpmobile] = useState("");
+  const [pcompanyName, setpcompanyName] = useState("");
+  const [pposition, setpposition] = useState("");
+
+
+  
+  const [eemail, seteEmail] = useState("");
+  const [epassword, setePassword] = useState("");
+  const [efirstName, setefirstName] = useState("");
+  const [elastName, setelastName] = useState("");
+  const [emobile, setemobile] = useState("");
+  const [ecompanyName, setecompanyName] = useState("");
+  const [eposition, seteposition] = useState("");
+
+  
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("")
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [mobile, setmobile] = useState("");
-  const [collegeName, setcollegeName] = useState("");
-  const [city, setcity] = useState("");
   const [companyName, setcompanyName] = useState("");
   const [position, setposition] = useState("");
   const [experience, setexperience] = useState("");
@@ -46,13 +71,13 @@ const Signup = () => {
   const Submithandler = (e) => {
     e.preventDefault();
     const formData = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-      mobile: mobile,
-      collegeName: collegeName,
-      city: city,
+      firstName: sfirstName,
+      lastName: slastName,
+      email: semail,
+      password: spassword,
+      mobile: smobile,
+      collegeName: scollegeName,
+      city: scity,
     };
 
     // console.log("Form submitted:", formData);
@@ -62,13 +87,13 @@ const Signup = () => {
   const Submitdata = (e) => {
     e.preventDefault();
     const formData = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-      mobile: mobile,
-      companyName: companyName,
-      position: position,
+      firstName: pfirstName,
+      lastName: plastName,
+      email: pemail,
+      password: ppassword,
+      mobile: pmobile,
+      companyName: pcompanyName,
+      position: pposition,
     };
     // console.log("Form submitted:", formData);
     dispatch(professionalregister(formData));
@@ -77,13 +102,13 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-      mobile: mobile,
-      companyName: companyName,
-      position: position,
+      firstName: efirstName,
+      lastName: elastName,
+      email: eemail,
+      password: epassword,
+      mobile: emobile,
+      companyName: ecompanyName,
+      position: eposition,
     };
     // console.log("Form submitted:", formData);
     dispatch(employerregister(formData));
@@ -152,8 +177,8 @@ const Signup = () => {
                         type="text"
                         id="firstName"
                         name="firstName"
-                        value={firstName}
-                        onChange={(e) => setfirstName(e.target.value)}
+                        value={sfirstName}
+                        onChange={(e) => setsfirstName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -162,8 +187,8 @@ const Signup = () => {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        value={lastName}
-                        onChange={(e) => setlastName(e.target.value)}
+                        value={slastName}
+                        onChange={(e) => setslastName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -172,8 +197,8 @@ const Signup = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={semail}
+                        onChange={(e) => setsEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -182,8 +207,8 @@ const Signup = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={spassword}
+                        onChange={(e) => setsPassword(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -192,8 +217,8 @@ const Signup = () => {
                         type="tel"
                         id="mobile"
                         name="mobile"
-                        value={mobile}
-                        onChange={(e) => setmobile(e.target.value)}
+                        value={smobile}
+                        onChange={(e) => setsmobile(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -202,8 +227,8 @@ const Signup = () => {
                         type="text"
                         id="collegeName"
                         name="collegeName"
-                        value={collegeName}
-                        onChange={(e) => setcollegeName(e.target.value)}
+                        value={scollegeName}
+                        onChange={(e) => setscollegeName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -212,8 +237,8 @@ const Signup = () => {
                         type="text"
                         id="city"
                         name="city"
-                        value={city}
-                        onChange={(e) => setcity(e.target.value)}
+                        value={scity}
+                        onChange={(e) => setscity(e.target.value)}
                       />
                     </FormControl>
                     <Flex gap="2" w="100%">
@@ -260,8 +285,8 @@ const Signup = () => {
                         type="text"
                         id="firstName"
                         name="firstName"
-                        value={firstName}
-                        onChange={(e) => setfirstName(e.target.value)}
+                        value={pfirstName}
+                        onChange={(e) => setpfirstName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -270,8 +295,8 @@ const Signup = () => {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        value={lastName}
-                        onChange={(e) => setlastName(e.target.value)}
+                        value={plastName}
+                        onChange={(e) => setplastName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -280,8 +305,8 @@ const Signup = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={pemail}
+                        onChange={(e) => setpEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -290,8 +315,8 @@ const Signup = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={ppassword}
+                        onChange={(e) => setpPassword(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -300,8 +325,8 @@ const Signup = () => {
                         type="tel"
                         id="mobile"
                         name="mobile"
-                        value={mobile}
-                        onChange={(e) => setmobile(e.target.value)}
+                        value={pmobile}
+                        onChange={(e) => setpmobile(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -310,8 +335,8 @@ const Signup = () => {
                         type="text"
                         id="companyName"
                         name="companyName"
-                        value={companyName}
-                        onChange={(e) => setcompanyName(e.target.value)}
+                        value={pcompanyName}
+                        onChange={(e) => setpcompanyName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -319,8 +344,8 @@ const Signup = () => {
                       <Select
                         id="position"
                         name="position"
-                        value={position}
-                        onChange={(e) => setposition(e.target.value)}
+                        value={pposition}
+                        onChange={(e) => setpposition(e.target.value)}
                       >
                         <option value="">Select Position From Here</option>
                         <option value="Marketing Specialist">
@@ -592,14 +617,14 @@ const Signup = () => {
                     <Text>
                       ------------------------ or ------------------------
                     </Text>
-                    <FormControl isRequired>
+                    <FormControl isRequired>e
                       <FormLabel htmlFor="firstName">First Name</FormLabel>
                       <Input
                         type="text"
                         id="firstName"
                         name="firstName"
-                        value={firstName}
-                        onChange={(e) => setfirstName(e.target.value)}
+                        value={efirstName}
+                        onChange={(e) => setefirstName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -608,28 +633,28 @@ const Signup = () => {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        value={lastName}
-                        onChange={(e) => setlastName(e.target.value)}
+                        value={elastName}
+                        onChange={(e) => setelastName(e.target.value)}
                       />
                     </FormControl>
-                    <FormControl isRequired>
+                    <FormControl isRequired>e
                       <FormLabel htmlFor="email">Official Email Id</FormLabel>
                       <Input
                         type="email"
                         id="email"
                         name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={eemail}
+                        onChange={(e) => seteEmail(e.target.value)}
                       />
                     </FormControl>
-                    <FormControl isRequired>
+                    <FormControl isRequired>e
                       <FormLabel htmlFor="password">Password</FormLabel>
                       <Input
                         type="password"
                         id="password"
                         name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={epassword}
+                        onChange={(e) => setePassword(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -638,8 +663,8 @@ const Signup = () => {
                         type="tel"
                         id="mobile"
                         name="mobile"
-                        value={mobile}
-                        onChange={(e) => setmobile(e.target.value)}
+                        value={emobile}
+                        onChange={(e) => setemobile(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -648,8 +673,8 @@ const Signup = () => {
                         type="text"
                         id="companyName"
                         name="companyName"
-                        value={companyName}
-                        onChange={(e) => setcompanyName(e.target.value)}
+                        value={ecompanyName}
+                        onChange={(e) => setecompanyName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -657,8 +682,8 @@ const Signup = () => {
                       <Select
                         id="position"
                         name="position"
-                        value={position}
-                        onChange={(e) => setposition(e.target.value)}
+                        value={eposition}
+                        onChange={(e) => seteposition(e.target.value)}
                       >
                         <option value="">Select Position From Here</option>
                         <option value="Marketing Specialist">

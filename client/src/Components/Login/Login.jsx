@@ -27,6 +27,12 @@ import {
 } from "../../Redux/actions.js/user";
 
 const Login = () => {
+  const [semail, setsEmail] = useState("");
+  const [spassword, setsPassword] = useState("");
+  const [pemail, setpEmail] = useState("");
+  const [ppassword, setpPassword] = useState("");
+  const [eemail, seteEmail] = useState("");
+  const [epassword, setePassword] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
@@ -35,21 +41,21 @@ const Login = () => {
     e.preventDefault();
  
     // console.log("Form submitted:", formData);
-    dispatch(studentlogin(email , password));
+    dispatch(studentlogin(semail , spassword));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
  
     // console.log("Form submitted:", formData);
-    dispatch(professionallogin(email , password));
+    dispatch(professionallogin(pemail , ppassword));
   };
 
   const Submitdata = (e) => {
     e.preventDefault();
  
     // console.log("Form submitted:", formData);
-    dispatch(employerlogin(email , password));
+    dispatch(employerlogin(eemail , epassword));
   };
 
 
@@ -101,8 +107,8 @@ const Login = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={semail}
+                        onChange={(e) => setsEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -111,8 +117,8 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={spassword}
+                        onChange={(e) => setsPassword(e.target.value)}
                       />
                     </FormControl>
                     <Box w="full">
@@ -158,8 +164,8 @@ const Login = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={pemail}
+                        onChange={(e) => setpEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -168,8 +174,8 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={ppassword}
+                        onChange={(e) => setpPassword(e.target.value)}
                       />
                     </FormControl>
                     <Box w="full">
@@ -214,8 +220,8 @@ const Login = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={eemail}
+                        onChange={(e) => seteEmail(e.target.value)}
                       />
                     </FormControl>
 
@@ -225,8 +231,8 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={epassword}
+                        onChange={(e) => setePassword(e.target.value)}
                       />
                     </FormControl>
                     <Box w="full">
