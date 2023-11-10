@@ -57,9 +57,10 @@ import section5 from "../../assest/Untitled_design__1_-removebg-preview.png";
 import section6 from "../../assest/Rectangle 22.png";
 
 const Landing = () => {
+  const [isPaused2, setIsPaused2] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const handleHover = () => {
-    setIsPaused(!isPaused);
+    setIsPaused2(!isPaused2);
   };
 
   const scroll = keyframes({
@@ -639,9 +640,9 @@ const Landing = () => {
         m="auto"
         align-items="center"
         height="328px"
-        background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
-linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
-        border="1px solid #FFFFFF1A"
+//         background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
+// linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
+        // border="1px solid #FFFFFF1A"
       >
         <Box
           width="419px"
@@ -750,9 +751,9 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
             height="80px"
             top="2270px"
             left="-608px"
-            background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
-linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
-            border="1px solid #FFFFFF1A"
+//             background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
+// linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
+//             border="1px solid #FFFFFF1A"
             mt="50px"
             ml="30px"
           >
@@ -819,9 +820,9 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         pt={20}
         align-items="center"
         mt="10px"
-        background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
-              linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
-        border="1px solid #FFFFFF1A"
+        // background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
+        //       linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
+        // border="1px solid #FFFFFF1A"
         width="1440px"
         height="394px"
         top="2676px"
@@ -950,9 +951,9 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
         m="auto"
         pt={20}
         align-items="center"
-        background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
-linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
-        border="1px solid #FFFFFF1A"
+//         background="linear-gradient(0deg, #FFFFFF, #FFFFFF),
+// linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))"
+//         border="1px solid #FFFFFF1A"
         width="1440px"
         height="394px"
         top="2676px"
