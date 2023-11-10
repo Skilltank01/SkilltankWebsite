@@ -617,7 +617,7 @@ const Signup = () => {
                     <Text>
                       ------------------------ or ------------------------
                     </Text>
-                    <FormControl isRequired>e
+                    <FormControl isRequired>
                       <FormLabel htmlFor="firstName">First Name</FormLabel>
                       <Input
                         type="text"
@@ -637,7 +637,7 @@ const Signup = () => {
                         onChange={(e) => setelastName(e.target.value)}
                       />
                     </FormControl>
-                    <FormControl isRequired>e
+                    <FormControl isRequired>
                       <FormLabel htmlFor="email">Official Email Id</FormLabel>
                       <Input
                         type="email"
@@ -647,7 +647,7 @@ const Signup = () => {
                         onChange={(e) => seteEmail(e.target.value)}
                       />
                     </FormControl>
-                    <FormControl isRequired>e
+                    <FormControl isRequired>
                       <FormLabel htmlFor="password">Password</FormLabel>
                       <Input
                         type="password"
