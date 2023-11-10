@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import  register  from '../../Redux/actions/user'
-import { useDispatch } from 'react-redux'
+
+import { useDispatch } from "react-redux";
 import {
   Box,
   Tabs,
@@ -20,67 +20,90 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { GoogleLogin } from "@react-oauth/google";
-import { register } from "../../Redux/actions.js/user";
+import {
+  studentregister,
+  professionalregister,
+  employerregister,
+  mentorregister,
+ 
+} from "../../Redux/actions.js/user";
 
 const Signup = () => {
+  const dispatch = useDispatch();
 
-  // const [firstName, setFirstName] = useState('');
-  // const [lastName, setLastName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [mobile, setMobile] = useState('');
-  // const [collegeName, setCollegeName] = useState('');
-  // const [city, setCity] = useState('');
-  // const [companyName, setCompanyName] = useState('');
-  // const [position, setPosition] = useState('');
-  // const [experience, setExperience] = useState('');
-  // const [domainOfInterest, setDomainOfInterest] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [mobile, setmobile] = useState("");
+  const [collegeName, setcollegeName] = useState("");
+  const [city, setcity] = useState("");
+  const [companyName, setcompanyName] = useState("");
+  const [position, setposition] = useState("");
+  const [experience, setexperience] = useState("");
+  const [domainOfInterest, setdomainOfInterest] = useState("");
 
+  const Submithandler = (e) => {
+    e.preventDefault();
+    const formData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+      mobile: mobile,
+      collegeName: collegeName,
+      city: city,
+    };
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    mobile: '',
-    companyName: '',
-    position: '',
-    experience:"",
-    domainOfInterest:'',
-    collegeName:"",
-    city:'',
-  });
+    // console.log("Form submitted:", formData);
+    dispatch(studentregister(formData));
+  };
 
-  const dispatch = useDispatch()
+  const Submitdata = (e) => {
+    e.preventDefault();
+    const formData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+      mobile: mobile,
+      companyName: companyName,
+      position: position,
+    };
+    // console.log("Form submitted:", formData);
+    dispatch(professionalregister(formData));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // const formData = new FormData();
-
-    // formData.append('firstName', firstName);
-    // formData.append('lastName', lastName);
-    // formData.append('email', email);
-    // formData.append('password', password);
-    // formData.append('mobile', mobile);
-    // formData.append('collegeName', collegeName);
-    // formData.append('city', city);
-    // formData.append('companyName', companyName);
-    // formData.append('position', position);
-    // formData.append('experience', experience);
-    // formData.append('domainOfInterest', domainOfInterest);
-
-    console.log('Form submitted:', formData);
-
-    dispatch(register(formData));
+    const formData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+      mobile: mobile,
+      companyName: companyName,
+      position: position,
+    };
+    // console.log("Form submitted:", formData);
+    dispatch(employerregister(formData));
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const handledata = (e) => {
+    e.preventDefault();
+    const formData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+      mobile: mobile,
+      companyName: companyName,
+      position: position,
+      experience: experience,
+      domainOfInterest: domainOfInterest,
+    };
+    // console.log("Form submitted:", formData);
+    dispatch(mentorregister(formData));
   };
 
   return (
@@ -101,9 +124,10 @@ const Signup = () => {
           </TabList>
 
           <TabPanels>
+
             <TabPanel>
               <Box p={4} w="100%" align="center" m="auto">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={Submithandler}>
                   <VStack spacing={4}>
                     <FormControl>
                       <GoogleLogin
@@ -117,9 +141,10 @@ const Signup = () => {
                         style={{ backgroundColor: "blue", color: "white" }}
                       />
                     </FormControl>
-                  
-                    <Text>------------------------ or ------------------------</Text>
-                
+
+                    <Text>
+                      ------------------------ or ------------------------
+                    </Text>
 
                     <FormControl isRequired>
                       <FormLabel htmlFor="firstName">First Name</FormLabel>
@@ -127,8 +152,8 @@ const Signup = () => {
                         type="text"
                         id="firstName"
                         name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
+                        value={firstName}
+                        onChange={(e) => setfirstName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -137,8 +162,8 @@ const Signup = () => {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
+                        value={lastName}
+                        onChange={(e) => setlastName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -147,8 +172,8 @@ const Signup = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -157,8 +182,8 @@ const Signup = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -167,8 +192,8 @@ const Signup = () => {
                         type="tel"
                         id="mobile"
                         name="mobile"
-                        value={formData.mobile}
-                        onChange={handleChange}
+                        value={mobile}
+                        onChange={(e) => setmobile(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -177,8 +202,8 @@ const Signup = () => {
                         type="text"
                         id="collegeName"
                         name="collegeName"
-                        value={formData.collegeName}
-                        onChange={handleChange}
+                        value={collegeName}
+                        onChange={(e) => setcollegeName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -187,8 +212,8 @@ const Signup = () => {
                         type="text"
                         id="city"
                         name="city"
-                        value={formData.city}
-                        onChange={handleChange}
+                        value={city}
+                        onChange={(e) => setcity(e.target.value)}
                       />
                     </FormControl>
                     <Flex gap="2" w="100%">
@@ -214,9 +239,8 @@ const Signup = () => {
 
             <TabPanel>
               <Box p={4} w="100%" align="center" m="auto">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={Submitdata}>
                   <VStack spacing={4}>
-               
                     <FormControl>
                       <GoogleLogin
                         onSuccess={(credentialResponse) => {
@@ -227,15 +251,17 @@ const Signup = () => {
                         }}
                       />
                     </FormControl>
-                    <Text>------------------------ or ------------------------</Text>
+                    <Text>
+                      ------------------------ or ------------------------
+                    </Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="firstName">First Name</FormLabel>
                       <Input
                         type="text"
                         id="firstName"
                         name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
+                        value={firstName}
+                        onChange={(e) => setfirstName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -244,18 +270,18 @@ const Signup = () => {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
+                        value={lastName}
+                        onChange={(e) => setlastName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
-                      <FormLabel htmlFor="email">Official Email Id</FormLabel>
+                      <FormLabel htmlFor="email">Email Id</FormLabel>
                       <Input
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -264,8 +290,8 @@ const Signup = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -274,8 +300,8 @@ const Signup = () => {
                         type="tel"
                         id="mobile"
                         name="mobile"
-                        value={formData.mobile}
-                        onChange={handleChange}
+                        value={mobile}
+                        onChange={(e) => setmobile(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -284,8 +310,8 @@ const Signup = () => {
                         type="text"
                         id="companyName"
                         name="companyName"
-                        value={formData.companyName}
-                        onChange={handleChange}
+                        value={companyName}
+                        onChange={(e) => setcompanyName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -293,11 +319,10 @@ const Signup = () => {
                       <Select
                         id="position"
                         name="position"
-                        value={formData.position}
-                        onChange={handleChange}
-                      ><option value="">
-                          Select Position From Here
-                        </option>
+                        value={position}
+                        onChange={(e) => setposition(e.target.value)}
+                      >
+                        <option value="">Select Position From Here</option>
                         <option value="Marketing Specialist">
                           Marketing Specialist
                         </option>
@@ -564,15 +589,17 @@ const Signup = () => {
                         }}
                       />
                     </FormControl>
-                    <Text>------------------------ or ------------------------</Text>
+                    <Text>
+                      ------------------------ or ------------------------
+                    </Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="firstName">First Name</FormLabel>
                       <Input
                         type="text"
                         id="firstName"
                         name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
+                        value={firstName}
+                        onChange={(e) => setfirstName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -581,8 +608,8 @@ const Signup = () => {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
+                        value={lastName}
+                        onChange={(e) => setlastName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -591,8 +618,8 @@ const Signup = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -601,8 +628,8 @@ const Signup = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -611,8 +638,8 @@ const Signup = () => {
                         type="tel"
                         id="mobile"
                         name="mobile"
-                        value={formData.mobile}
-                        onChange={handleChange}
+                        value={mobile}
+                        onChange={(e) => setmobile(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -621,8 +648,8 @@ const Signup = () => {
                         type="text"
                         id="companyName"
                         name="companyName"
-                        value={formData.companyName}
-                        onChange={handleChange}
+                        value={companyName}
+                        onChange={(e) => setcompanyName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -630,11 +657,10 @@ const Signup = () => {
                       <Select
                         id="position"
                         name="position"
-                        value={formData.position}
-                        onChange={handleChange}
-                      ><option value="">
-                          Select Position From Here
-                        </option>
+                        value={position}
+                        onChange={(e) => setposition(e.target.value)}
+                      >
+                        <option value="">Select Position From Here</option>
                         <option value="Marketing Specialist">
                           Marketing Specialist
                         </option>
@@ -889,7 +915,7 @@ const Signup = () => {
 
             <TabPanel>
               <Box p={4} w="100%" align="center" m="auto">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handledata}>
                   <VStack spacing={4}>
                     <FormControl>
                       <GoogleLogin
@@ -901,15 +927,17 @@ const Signup = () => {
                         }}
                       />
                     </FormControl>
-                    <Text>------------------------ or ------------------------</Text>
+                    <Text>
+                      ------------------------ or ------------------------
+                    </Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="firstName">First Name</FormLabel>
                       <Input
                         type="text"
                         id="firstName"
                         name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
+                        value={firstName}
+                        onChange={(e) => setfirstName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -918,20 +946,18 @@ const Signup = () => {
                         type="text"
                         id="lastName"
                         name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
+                        value={lastName}
+                        onChange={(e) => setlastName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
-                      <FormLabel htmlFor="officialEmail">
-                        Official Email Id
-                      </FormLabel>
+                      <FormLabel htmlFor="email"> Email Id</FormLabel>
                       <Input
                         type="email"
-                        id="officialEmail"
-                        name="officialEmail"
-                        value={formData.officialEmail}
-                        onChange={handleChange}
+                        id="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -940,18 +966,18 @@ const Signup = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
-                      <FormLabel htmlFor="mobile">Mobile No.</FormLabel>
+                      <FormLabel htmlFor="mobile">Mobile Number</FormLabel>
                       <Input
                         type="tel"
                         id="mobile"
                         name="mobile"
-                        value={formData.mobile}
-                        onChange={handleChange}
+                        value={mobile}
+                        onChange={(e) => setmobile(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -960,8 +986,8 @@ const Signup = () => {
                         type="text"
                         id="companyName"
                         name="companyName"
-                        value={formData.companyName}
-                        onChange={handleChange}
+                        value={companyName}
+                        onChange={(e) => setcompanyName(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -969,11 +995,10 @@ const Signup = () => {
                       <Select
                         id="position"
                         name="position"
-                        value={formData.position}
-                        onChange={handleChange}
-                      ><option value="">
-                          Select Position From Here
-                        </option>
+                        value={position}
+                        onChange={(e) => setposition(e.target.value)}
+                      >
+                        <option value="">Select Position From Here</option>
                         <option value="Marketing Specialist">
                           Marketing Specialist
                         </option>
@@ -1211,8 +1236,8 @@ const Signup = () => {
                         type="text"
                         id="experience"
                         name="experience"
-                        value={formData.experience}
-                        onChange={handleChange}
+                        value={experience}
+                        onChange={(e) => setexperience(e.target.value)}
                       />
                     </FormControl>
 
@@ -1223,8 +1248,8 @@ const Signup = () => {
                       <Select
                         id="domainOfInterest"
                         name="domainOfInterest"
-                        value={formData.domainOfInterest}
-                        onChange={handleChange}
+                        value={domainOfInterest}
+                        onChange={(e) => setdomainOfInterest(e.target.value)}
                       >
                         <option value="">Select Domain Of Interest</option>
                         <option value="Accounting & Taxation">
@@ -1297,11 +1322,12 @@ const Signup = () => {
                 </form>
               </Box>
             </TabPanel>
+
           </TabPanels>
         </Tabs>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;

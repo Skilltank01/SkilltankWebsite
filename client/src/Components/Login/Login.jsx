@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-
 import {
   Box,
   Tabs,
@@ -17,30 +16,48 @@ import {
   VStack,
   Heading,
   Text,
-  Select,
   Flex,
 } from "@chakra-ui/react";
 import { GoogleLogin } from "@react-oauth/google";
-import { login } from "../../Redux/actions.js/user";
+import {
+  studentlogin,
+  professionallogin,
+  mentorlogin,
+  employerlogin,
+} from "../../Redux/actions.js/user";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+
+  const Submithandler = (e) => {
+    e.preventDefault();
+ 
+    // console.log("Form submitted:", formData);
+    dispatch(studentlogin(email , password));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(formData));
-    console.log("Form submitted:", formData);
-    
+ 
+    // console.log("Form submitted:", formData);
+    dispatch(professionallogin(email , password));
+  };
+
+  const Submitdata = (e) => {
+    e.preventDefault();
+ 
+    // console.log("Form submitted:", formData);
+    dispatch(employerlogin(email , password));
+  };
+
+
+  const handledata = (e) => {
+    e.preventDefault();
+ 
+    // console.log("Form submitted:", formData);
+    dispatch(mentorlogin(email , password));
   };
   return (
     <>
@@ -62,7 +79,7 @@ const Login = () => {
           <TabPanels>
             <TabPanel>
               <Box p={4} w="100%" align="center" m="auto">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={Submithandler}>
                   <VStack spacing={4}>
                     <FormControl>
                       <GoogleLogin
@@ -84,8 +101,8 @@ const Login = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -94,8 +111,8 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </FormControl>
                     <Box w="full">
@@ -104,7 +121,7 @@ const Login = () => {
                       </Text>
                     </Box>
                     <Button type="submit" colorScheme="orange" w="full">
-                      Sign Up
+                      Sign in
                     </Button>
                     <Flex gap="2" w="fit-content" m="auto">
                       <Text>New User to Skilltank?</Text>
@@ -136,13 +153,13 @@ const Login = () => {
                       ------------------------ or ------------------------
                     </Text>
                     <FormControl isRequired>
-                      <FormLabel htmlFor="email">Official Email Id </FormLabel>
+                      <FormLabel htmlFor="email"> Email Id </FormLabel>
                       <Input
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormControl>
                     <FormControl isRequired>
@@ -151,8 +168,8 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </FormControl>
                     <Box w="full">
@@ -161,7 +178,7 @@ const Login = () => {
                       </Text>
                     </Box>
                     <Button type="submit" colorScheme="orange" w="full">
-                      Sign Up
+                      Sign in
                     </Button>
                     <Flex gap="2" w="fit-content" m="auto">
                       <Text>New User to Skilltank?</Text>
@@ -176,7 +193,7 @@ const Login = () => {
 
             <TabPanel>
               <Box p={4} w="100%" align="center" m="auto">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={Submitdata}>
                   <VStack spacing={4}>
                     <FormControl>
                       <GoogleLogin
@@ -197,8 +214,8 @@ const Login = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormControl>
 
@@ -208,8 +225,8 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </FormControl>
                     <Box w="full">
@@ -218,7 +235,7 @@ const Login = () => {
                       </Text>
                     </Box>
                     <Button type="submit" colorScheme="orange" w="full">
-                      Sign Up
+                      Sign in
                     </Button>
                     <Flex gap="2" w="fit-content" m="auto">
                       <Text>New User to Skilltank?</Text>
@@ -233,7 +250,7 @@ const Login = () => {
 
             <TabPanel>
               <Box p={4} w="100%" align="center" m="auto">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handledata}>
                   <VStack spacing={4}>
                     <FormControl>
                       <GoogleLogin
@@ -250,14 +267,14 @@ const Login = () => {
                     </Text>
                     <FormControl isRequired>
                       <FormLabel htmlFor="officialEmail">
-                        Official Email Id
+                         Email Id
                       </FormLabel>
                       <Input
                         type="email"
-                        id="officialEmail"
-                        name="officialEmail"
-                        value={formData.officialEmail}
-                        onChange={handleChange}
+                        id="Email"
+                        name="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </FormControl>
 
@@ -267,8 +284,8 @@ const Login = () => {
                         type="password"
                         id="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </FormControl>
                     <Box w="full">
@@ -277,7 +294,7 @@ const Login = () => {
                       </Text>
                     </Box>
                     <Button type="submit" colorScheme="orange" w="full">
-                      Sign Up
+                      Sign in
                     </Button>
                     <Flex gap="2" w="fit-content" m="auto">
                       <Text>New User to Skilltank?</Text>
